@@ -1,0 +1,9 @@
+buildrepo.mac
+.svn
+.bat
+.svn/
+data/
+hold/
+data/**/*.sqlite
+*.bat
+*.hold

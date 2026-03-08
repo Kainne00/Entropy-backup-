@@ -1,0 +1,4083 @@
+ * entropy
+ * changelog.txt
+ * exspes
+ *
+ * plugins: MQ2Collections, MQ2Nav, MQ2Map, MQ2SQLite, MQ2DanNet, MQ2MoveUtils, MQ2Lua
+ *
+ * wiki: https://entropy.exspes.com/wiki/index.php/Main_Page
+ *
+ * Discord: 2pY6Byt
+ *
+ * Donations: paypal.me/exspes
+ *
+ ***|
+
+
+
+--------------------
+
+
+
+250201.01
+- /eb
+  several hundred tool tips added (tonnes more to go)
+  complete redesign of all text entry and checkboxes to make them uniform
+  stupid number of bug fixes
+- beastlord
+  several changes to how paragon(both) work as well as consumption
+  redesign of the /eb class section for paragon and consumption (all the options)
+- /mode trainskill
+  corrected a target issue with bandaging
+- shadowknight
+  removed several baked in defensives. use /defense for them moving on
+  adjusted AAs/discs so they can be turned on or off in /eb
+  added in adjustable % for Thought Leach aa
+- cleric
+  updated the switch variable for arbitration to fall in line with naming conventions
+  go turn yours back on
+- paladin
+  adjusted AAs/discs so they can be turned on or off in /eb
+  more controls made available in /eb for the class
+- magician
+  added access to /miscdps
+  /sendpets - will send pet on target, and rage pets, cast new rage pet
+    as well as make sure all 4 mage pet runes are in place.
+    (useful if you just want to force feed pets to a mob)
+    considers mob con and will just send in the main pet on low level trash
+- corrected a bad variable in /miscdps
+- all UIs have been adjusted to remember alternate profiles by toon
+  so the first time it may reset on you. win some......
+- pulling
+  several adjustments to the timers for pulling mobs and dead things
+- hud
+  working on redesigning it, so far, i've just removed a lot of _not needed_ stuff
+  anything that was removed was already in /eb
+
+
+250118.01
+- magician
+  adjusted AAs so they can be turned on or off 
+- UI's
+  boatload of treenode corrections. shouldn't crash anymore.. i hope..
+  some visual tab adjustments
+  lot more tooltips added in. baby steps...
+- beastlord
+  added in chameleon strike. no idea how it got missed
+  off by default. turn on if you want it used
+- rogue
+  corrected a typo in the Focused Rakes Rampage check
+
+
+250112.02
+- /miscdps
+  opend this up to be used by any class.
+  it can be added into the class rotations along with normal meele/spells/heal/discs/whtever
+  look in /eb -> control -> /chr -> order in combat
+  this opens up 50 uses of any various skill/spell/disc/whatever not accounted for (looking at you monks)
+  added to /eb for easy use
+- beastlord
+  - adjusted discs/AAs so they can be turned on or off 
+  - added in a hate % option for roar of thunder use (default 50%)
+- events for landing raid in ToB
+  color movement locations are in the /eb events tab
+  manual movement buttonss are in the raids tab in the hud
+- ranger
+  - adjusted discs/AAs so they can be turned on or off 
+
+
+241230.01
+- /splash command will check twincast for cleric/pally now
+- rogue
+  all discs and aa's can be turned on or off now. (default is off)
+  - /eb -> control -> /chr -> class specifics
+- events
+  move points are in for the High Priest mission
+- in /eb -> admin -> hud -< buttons
+  you can turn on the movement UI
+  this will add a button to the hud giving access to the new movement system
+  still a work in progress and a lot of zones to be added
+
+
+240922.01
+- main repo updated for some monk disk...
+- corected the ui_drive.lua filename in start.mac
+- some visual adjustments to the rez control ui
+- more tooltips..  you asked for it..
+- you can now toggle a class completely off for healing
+  look in the heal points in the UI
+- small adjustment to meming spells while mounted
+
+
+240710.01
+-NOTICE: I would advise deleting contents of the entropy lua folder
+         due to all the changes!
+- command changes
+  /eb (no options) will bring up a consolidated menu 
+    that includes: admin, debug, events, notes, / controls
+    (still adding things to this, so don't panic)
+  /eb hud [on/off] - manual turn the main hud on/off
+  /eb radar [on/off] - manual turn spawn radar on/off
+  /eb drive [on/off] - manual turncrew drive control on/off
+  /eb drivebuttons [on/off] - manual turn on the drive control buttons only on/off.
+  /control - use option help to see whats there
+  /entropy hud - command removed    
+- removed the menus that have been combined into /eb
+- hud 
+  now has an icon for SOS
+  the yxz label area is clickable and will echo currrent loc to copypasta into events if needed
+  i'm versioning the hud so i can make different kinds. if theres a request, yell.
+  v1 = original
+  v2 = smaller, less data shown
+- bard
+  /travel - since selos is shorter than Shauri's, reusing /travel
+    will now break invis to recast selos then reinvis/levi
+- petfarm will use mage and beast swarm pets if it can
+- xtarget for healers wont stop at 13 anymore. math is hard!
+- assist: correct manual logic assist where assist would 
+    change target but toon would not reacquire
+ 
+
+240525.05
+- toons should stand when waiting on cooldown after meming a spell
+- ui2 build:
+  added remaining class variables to: BRD, PAL, CLR, RNG, ENC, ROG, MAG
+  (more to come)
+  corrected the dot name duplication
+- ranger
+  added switch to force summer spam on named mobs
+  /chr summernamed [on/off]
+- cleric
+  attempt to use Forceful Rejuvenation on any issuance cast
+  /chr rejuvissue [on/off]
+- pet illusions
+  corrected the illusion match for items like Scaled Hatchling Familiar
+  the ones that are both familiars or pet illusions
+- magician
+  cauldrons will not summon in combat anymore
+  corrected the /coh help error  
+  added in controls for ice and fire summon click items
+  see ui2 build->chr->class specifics->summon dps clickies
+  will summon and use them as DPS fillers
+- lua binds.lua is now part of the running mac
+  this is the start of replacing a lot of / commands.
+- /env dropinvis will now drop invis from randos that keep invising your group
+- /minion [force] will send swarm pets now
+- /override [maxmelee] - does not force the max melee setting just makes sure you are 
+  within melee range
+- Lots of Lua changes. i'm sure i broke something somewhere. 
+  yell if you find something
+- can turn on a raid tabs for the hud. whats shown will be based off of 
+  the raid zone you are in.
+  raid even buttons will be there by default
+- adding in Z point for event movements. may need to reset some of your LOCs
+
+  
+
+231230.01
+- druid
+  added in single target HoT
+- agro
+  put in a 2 sec base delay/break so it doesnt try to fire all the skills at once  
+- complete redesign of buff now sub
+- knights
+  withstand rune line
+  add to /defense with the tag knightwithstand
+  considerable increase in its usage
+  
+  
+231127.01
+- luarocks
+  corrected some orders and delays to adapt to the package installs for the lastest MQ release
+  i had an issue with the initial installs due to a delay in the macro. if this gives you issues,
+  end macro for entropy and run this: (copy paste into console)
+    /lua run "${MacroQuest.Path[macros]}\entropy\lua\packages.lua"
+  run it 2 times. first time will install "lsqlite3" second time will install "luafilesystem". 
+- lua  
+  changed the load orders, trying to stop that stupid undefined variable error.
+  several visual corrections
+  added in some quotes to account for spaces in lua file paths, because.. reasons..
+  minion button in buffs (build and hud) works now
+  pull with and mode celect correctly now in build ui
+  general timers have been added to the build ui
+  minion controls will show up in build ui for static pet classes
+- radar
+  can add/remove: pet attack button and mark buttons for raid or group
+- corrected a mez check in curing
+- cleric
+  early exit for issuance so it doesnt get stuck on a laggy cast timer
+- added in Yalrrek's to pet toys
+- added alternate command for /tc, /tcemu for emu servers that still use LoN.
+- fixed some random typos... theres soo damn many of them
+  
+
+230909.01
+- knights
+  removed the remaining harmonions timer calls
+- ui2 drive
+  can add/remove the bottons at bottom
+  removed the extra/non connected row of buttons
+- radar
+  can now swap between xtarget view and spawn count view
+  xtarget view shows raid/group marks as well as assists
+  con colors, target HPs, and what your current target is
+  added in a pet attack button to the spawn view. will make an on.off switch for them later.
+- corected a bad lua call for the sarcasim lines
+- rewrote the plugin checker. was working fine before, but did it anyway.  
+
+
+230817.01
+- paladin 
+  hand of tunare aa to the twincast routine
+- added cure to the class lines so it can be used outside the healing switch
+- beastlord
+  corrected 2 no delay looping issues that was bogging down the mac for that class
+  i also suggest doing: /edit tiCheck-Para 2m
+- drive
+  added the event buttons by toon listed   
+  think i finally have the zone crash fixed.. possibly... maybe
+- hud
+  can control the target name to a real name or display name
+  can now choose what buttons are displayed on the bottom of the hud under /ui2 admin
+- fast cast/short duration reuse buffs should be checked a lot more
+- knights
+  harmonious removed. use it as a buff with tags: now, incombat
+  same thing for repudiate/rune line
+- events
+  movelocs for Mearatas Raid mark debuffs
+  move loc/spawn for Rising/Setting Sun in Shadows Move raid
+  event UI updated
+- splashing (cleric/paladin)
+  splash will default center on whatever the current target is as long as it is with in cast range
+  if not in cast range it will default to caster
+  /heal splashmeonly (on/off) - on will force splashing you as the target only
+  hud updated for clerics/pallys
+- radar
+  /ui2 radar on/off
+  will show npc or pc according to the count number in options
+  clicking a name will target it
+  distance shows red for out of meele range green for in range
+  marks will be shown by name: raid assists/marks as well as group assist/marks
+  
+
+230710.01
+- looting option
+  /env loot leaveall, simply leaves all loot on corpse without any checks
+- bestlord
+  changes to the group and focused paragon checks
+- bard
+  adjustment o the focus check for gear
+- since eq stole the /ui command (bastards) it needed a new name. so, its now /ui2
+  if someone wants to nominate a better name, i'm all ears.
+- shaman
+  refined the heal routines a little
+  added /heal twincast (on/off) switch can turn off forcing twincast
+  aa spiritual channeling addeed under /chr cani channeling ##
+
+
+230318.01
+- drive
+  had a bad package include.. removed it.
+- pet weapons
+  added Shak Dathor's for the folded pack list
+- /defense
+  changed how it checks of area mobs and your health
+- /mode open
+  works as other modes do now using mode data as its source
+  slowed it down a little so its not quite as obvious
+- removed a couple old debugs
+
+  
+230106.01
+** NOTICE: you will need the most current build of MQ to use this!
+- /pull mode
+  int - now works as a command
+- drive ui (almost a complete redesign)
+  100% dannet peers
+  some clickable things
+  only watches peers in the same zone
+  - distance from driver
+  - endurance%
+  - manna %
+  - levitation
+  - Invis / Invis vs undead
+  - target
+  - current action (spell or disc)
+  
+  drive buttons
+  - auto on for all
+  - auto off for all
+  - mqp for all
+  - tie on/off
+  - tie force nav mode
+  - tie force stick mode
+  - self auto on/off
+  - /incontrol
+  - campfire drop
+  - stack invis
+  - remove all invis
+  - remove all levi
+  - all assist
+  - all hail
+  - request one single intervention pull on current target
+  - all /autoinventory
+  - /gather
+  - /here
+- hud  
+  redesigned the buttons at the bottom to match /drive
+  current target los; red=no los, green=good los
+  icons for the invis in the title bar
+  stupid number of other things
+- events
+  started adding in NoS stuff.
+  updated buttons portion to be.. well.. buttons.
+- ALL ui controls moved to /ui
+
+
+221228.01
+- /buff
+  nolobby - disables automated buffing in the guild lobby. no impact on manual
+- /pull
+  int - adapted to new pulling routines
+- /drive
+  several updates to fix the stupid crashing (still not sure i got them all)
+    
+
+221224.01 (xmas eve edition)
+- hud
+  removed some of the buttons and rearranged things to 
+  make it a little more compact
+- drive controls
+  /drive
+  enables a hud that monitors your crew
+  this is a work in progress
+  currently watches:
+  -invis/stacking
+  -distance
+  -levitate
+  -green=macro active and on auto
+  -blue=macro active and in manual
+  -purple=macro inactive
+  -red=toon dead
+  -toon currently casting spell id. (the name just took up too much space)
+  most of the common crew based commands as buttons
+- active observers added:
+  entropy auto switch
+  casting.id
+  invis spas
+  levi spa
+  movement buff spa
+    
+
+221205.01
+- /entropy
+  hud closeonend - closes out the hud lua on macro /end command
+- /mode
+  temppet (clr/wiz) adapted to new pull routines
+  hunt - adapted pull routine
+- small change to the stamina recovery for melee
+- hud
+  updated to acount for no variables to populate on mac start/restart
+- /build ui
+  corrected a string to bool value issue
+- fix for in combat turning off heal mode
+***WARNING***
+- lua path updates 
+  this is to fix the need to copy/move the lua files
+  the macro will not check the lua require pats settings. if entropy is not there the
+  macro will end with insturctions.
+  https://entropy.exspes.com/wiki/index.php/Install#Lua
+- updates to the wiki for macro install and lua paths
+  
+
+221016.01
+- bard casting
+  changed the process used to watch bard casting to prevent recasts or not finishing casting
+- shadowknight
+  removed veil of darkness aa from burn
+- /tag
+  corrected a missing } in the list/see control
+- /notes
+  added in a note system. cause i really dislike the existing one in EQ
+  /notes ui will bring up the window
+  didnt design a delete method.. just reuse.
+  notes are shared across toons
+- corrected an SPA issue with get best spell in book (i blame knightly)
+
+
+220625.01
+- pet pulling
+  added in exception for mezed targets
+- /heal self
+  some adjustments to the spawn data
+- pal
+  fix so pally will twincast splash.. lots..
+- UIs
+  should now take strings with spaces w/o using quotes
+- splash
+  adjustments to fix a some bad cast data when trying to splash
+- fixed a debug in /ass
+    
+
+220618.01
+- /build ui -> buff tags
+  fixed a bad variable
+- adjustments to rez timer checking for valid IDs
+- bard
+  put in (read uncommented) a small delay for bards that do not have the Metronome aa
+  (you should get that btw)
+- assisting
+  design change. should no longer pick up PC.... "should"
+- /override groupass
+  will now ignore the group assist and pull regardless if you have pull settings on
+  the group assist and you may end up with the same target, but.. meh..
+- mode forage will echo whats foraged
+- pulling (mob finding and validating)  
+  this is a complete redesign for mob finding
+  mob acquisition and discovery have been split up
+  the macro will now find all the mobs in your area (pull rad) and then 
+  it will decide which one to pull base off of pull mode, path, so on.
+  
+  you can do an /admin pull npc and see what mob its going to pull.
+  or do /see maSD to get a list of all the mobs it seens in your area.
+  
+  so far i have converted: nav pulling, base, pet, as well as pet farm
+  any pulling not converted will continue to work the old way.
+  
+
+
+220612.01
+- rezing
+  a blocked rez "Your ability has failed. Timer has been reset."
+  will now be treated as a successful landing resurrection. a timer will be set default is 30s
+  before another attempt is made
+- best in book spells
+  will now adapt by the max SPA @Darth_Voidptr#5678
+- mode rof_shard_bodhe
+  adapted to use the whatever class is runnings main routine for combat
+  no more special build combat routine
+- /area nopull
+  adds a mob to ignore for pulling purposes only. if the mob is within the pullers saferadius, 
+  this exception is skipped and the mob will be pulled
+  
+
+
+220408.01
+- adjustment to rest for the combat cooldown
+- working on an /event system. just getting it out there for a few to test
+
+
+220318.01
+- added /heal adj to:
+  the hud heal tab, the hud titlebar (if you want)
+  in build ui
+- /splash
+  complete redesign of the splash controls for cleric 
+  splash will not force a twincast nuke when splash is available with the intent to always twincast the splash
+  adding twinheal nuke (glorious line) with a tag twinheal and the splash control will use that
+  the glorious line nuke will pull your current set assists target to nuke then continue with the splash
+  If you have a Bifold and the nuke does not proc a twin heal, it will try to use that
+  If that doesnt workm it will try the AA Channeling the Divine for the twin heal procs
+  If that doesnt work, it will just normal splash
+   
+
+220313.01
+- help 
+  made some path adjustments to the help system
+- pulling (mob finding)
+  lot of changes to the order and skipping of invalid targets
+- pally
+  corrected a misfire with LoH for heal ToT
+- removed the no heal list from the build export
+- asssisting
+  DanNet assist should no longer flash the intended target
+  corrected the inline delays for assisting from the class calls
+- warrior
+  removed a hate generation skill from the normal DPS routine
+- war/pal/sk
+  removed all the old agro code  
+- /build ui  
+  shouldnt crash on minimize anymore (i hope)
+
+
+220225.01
+- loot
+  added a control to force looting NO TRADE items if you have it set in your personal loot control as need or greed
+  this should stop the looter from hanging in the loot cycle, USE CAUTION
+- hud
+  you can now turn on off what the hud title bar displays
+  -> /build ui -> hud -> headder
+- paladin
+  lots of little changes
+  removed/commented some old variables
+- shadowknight
+  see paladin 
+- cleric
+  added a target clear before finding an issuance target  
+- main DB
+  added in a few more ports
+- /port
+  will now work in the old style guild hall (first world TLP problems)
+  added in some error checking
+  
+
+220213.01
+- corrected an issue with the define for playerstate
+- paladin
+  adopted cleric splash routine and override option
+- necro
+  fixed a bad variable in death bloom
+- shaman
+  several changes to the splash healing
+- hud
+  changes to the hud title; shows auto/manual IV/IVU
+  random typo
+- AoC added to the no NPC pulling list
+- beastlord
+  corrected a dead check in paragon and part of the spawn group check
+- added swarm attack with pet attack
+  
+
+220123.01
+- /mode lush
+  corrected a cast issue with.. well not like you can cast alcohol.
+- melee position on a mob 
+  added a check so it should reposition rean and left/right sides better
+- class specific buffs like rogue poisons and changer gems should respond a bit better now
+- burns
+  engage% should be followed a bit closer
+  mobcount or force will override any other checks
+- bards
+  think i found the issue with them wanting to keep singing
+  maybe they will behave a bit more now. /shrug
+  
+    
+211226.01
+- corrected a monk old voodoo call
+- maHard stModeDragTargetCheck, time to recheck for corpses to drag. default is 5.
+  can lower it if its not responsive enough for bards/selos
+- corrected a logic issue in group regens. it shouldnt spam them anymore
+- tag:memspell . added to dot/nuke/cure/heal/song (dont think its needed in song)
+  will mem the spell into your buffslot ## if it is not already memed
+- added more pull controls in /build ui
+- corrected a bad rest variable.. would explain a lot of things...
+- /debug ui 
+  added in spawncounts by each radius the macro uses so you can see what it sees
+  increased the local spawn info to 10
+- pulling
+  so, inbetween a mob engagement, the check for local (safe radius) spawns was removed for buffing (no clue how this happened)
+  the code was trying to buff everything you had turned on inbetween every mob kill if buff the timer was over...
+  the puller should be a bit more focused on local mobs now, but will still check buffs according to timers when no mobs are close
+- pulling (finding mobs)
+  should never engage pets untill everything else is dead  
+
+
+211126.02
+- /mode summon
+  adapted for the patch changes to no longer needing soulstones
+- hud
+  fixed a label in the combat tab
+  position should not reset on new builds (debug and build as well)
+- corrected some missed variables and math in the /pull step addition (math is hard)
+- chanters can use /chr remez ## now
+- fixed a target hold issue in nav pulling
+- /build ui
+  updated to account for /agro changes
+- changes to agro
+  class order: taunt is no longer valid (does nothing)
+  class order: agro, now includes taunt for tanks
+  /agro [list] is no longer restricted to engine2, you can build our own agro routines
+  tank class routine get_agro() is ignored. i'll remove it later
+  tags: 16ish base tags added for agro. can use /agro -t to see them
+  
+  ** you will need to make the agro changes on your tanks
+  
+
+211124.04
+- events.inc
+  added an event for OMM silver mask clicking (no idea if it works)
+- tag
+  ignoremovement - will force ignoring movement checks
+  using this on anything with a cast time > 0 is just dumb. dont do it, it wont work
+- /pull step # (0-10) - sets the number of steps your pull radius is chopped into while looking for mobs
+  0 to disable and treat the entire pull radius as one search
+- /pull healcheck (on/off) - check healing while pulling
+- pulling (moving)
+  while returning home from a pull, healing checks will be done for self only
+  so... add tags self and ignoremovement to a heal you want cast on you while running
+  home cause you cant take a hit like a gurly monk!?!?
+  while moving to a target to pull, the same checks will be made. i have 
+  reservations about this and target changing. so it may need some adjustments  
+- pulling (tagging mobs)
+  if the tag ignoremovement is added to the pull other thing you are pulling 
+  with, movement checks will be skipped
+  
+
+211121.01
+- /override tmpengage
+  60 seconds of ignoring the engage %
+- bard / enchanter
+  adjusted the detault mez reset time
+  you will need to adjust your /chr setting
+- mage
+  added in burn to the default lsOrderClass
+  you will need to adjust yours for your mage to burn
+  corrected an old target dead check
+- rezing
+  adjustetd a spawn ID issue
+- necromancer
+  /chr gather ##%
+  
+
+211113.01
+- corrected an inline delay for dead people
+- changed to the "name" usage for adding NPC xtargets to heal them
+- bard / enchanter
+  base remez time externalized. default is now 18 seconds [18s].  mez will be reapplied if below that time
+- rezing
+  some adjustments to corpse finding. Or, you could just die less
+- bard singing
+  put the delay back that allowed songs to finishing playing
+- /debug ui
+  added a few more things 
+
+
+211107.01
+- /home stop death (on/off) works again
+- mob targeting should work again. i undid the things i did to undo the 
+  things knightly did cause the names do not mean what they said they mean
+- debuffing should count correctly now might even debuff too. guess we will see
+- /sash is being worked on. dont expect it to work for you for this build!
+
+
+211031.01
+- changed /see spawns # to work off spawn data type
+- pull mob finding
+  i have removed the NPC only restriction
+- adjusted the drop tag for illusions to match the members that dont mean what they say
+- shaman splash
+  adjusted it a bit. may be a bit too aggressive, will have to see
+- lots and lots of changes to the hud and build ui
+- hude tabs
+  in build ui->hud section you can turn off hud tabs you dont want
+
+
+211018.01
+- bard
+  the scan for focus items will include type 17 augs
+- pets
+  correct a copy/paste error with regeant checking
+- a lot of changes to how the macro sees mounts/illusions/familiars and other clickies
+  i prob broke tlp, no idea..
+- /buff keepmount (t/f) - will allow you to keep the mount and let it be recast even with the 
+  mount benefit on the toon.
+  this switch will override the drop tag for mounts
+
+
+211016.01
+- entering a command with a number option and not actually entering the number, 
+  like /env rad and hitting enter will not longer set the value to 0
+- fixed the sarcastic response call. quit doing dumb things..
+- fixed the popup output for bool switches
+- no more shrinking when its turned off.. this one was bugging me
+- adjusted the logic of how a mob is detected mofing to a taret using nav.. pull_mob_moveto()
+  if anything is detected within the toons safe radius that is hostile and not the intended target, the 
+  movement routine will be cleard. for modes, it will allow the acquisition of a new target, for non modes away from 
+  your groups camp, it will release the current intended target and return to camp.
+  this is gonna require some testing and refinement. but it should help.
+  side note: huge safe rad is bad. dont do it.
+
+
+211013.02
+- forgot to increment the schema version
+
+
+211013.01
+- some adjustments to rest check/loop breaks
+- bard
+  changes to the delays for singing (removed or shortened several of them)
+- dots
+  items used for dots will obey same rules as spells now
+- druid
+  heals again. for what its worth
+- tags
+  inmygroup - (heal, buff, cure) the intended target has to be in your group
+- redesign for mana recovery (needs some tlp testing, getting lazy in my old age)  
+- testing some breaks in larger loops for /env auto off. will roll these out slowly
+
+
+211003.01
+- several spawn type adjustments
+- corrections to mod rod usage
+- removed a debug in /admin spa
+- pets finder will now only look in the pet category and not created items on mage (dumb mages)
+- updated some more of the inmacro help optputs
+- 85 added to rez selection for the TLPers
+- /pull nav
+  will no longer pretarget the mob till it is within targeting criteria (nav stop / cast range / los)
+  added an option to turn on/off LoS checking with nav pulling. (credit: iluvseq)
+  added navlos switch to hud
+- melee logic to adjust for close range mobs that are still not los
+- corrected some target ids in /mode hunt
+
+
+210907.01
+- corrections to the GOM diversion in the cast routine
+- wait for mob in the pulling routine should account for odd close spawns faster
+
+
+210904.01
+- set the variable lsBlockedBuffsMe to init sooner in an attempt to
+  fix a rather rare bug for starting the macro
+- bard
+  corrected a vainglorious issue
+- chain pulling
+  some adjustments to mob finding increments
+
+
+210828.01
+- can now add "mode" to any class list (/chr list) to have any active modes checked while that 
+  class is doing its normal operations
+- heal twincast nukes will now obey /nuke delay timers
+- shaman
+  adapted to use the new twincast proc for surges 
+- bard
+  fixed vainglorious switch
+
+
+210826.01
+- beastlords should check paragon for self and group more often
+- added the debug switch to all do_mana_recovery checks
+- pets will not longer be included buffs tagged with group and raid when minion is not included
+- /rez other
+  corrected a spawn issue
+- clerics
+  introduced a system to force a 100% (or real close) uptime of healing twincast
+  /heal twin (on/off) to enable twincast healing
+  requirements:
+  - at least 1 Unyielding Line DD nuke loaded (2 works better)
+  - the nuke should be tagged with with a minimum of twincast. do not need to enable /cc nuke
+  - must have an assist set (any of the assist types will work)
+  - advisable to enable /override targetclear
+- bard
+  /chr vainglorious (on/off) switch for vainglorious
+- assist
+  added access to raid marks 1-3
+  using this method there is only target data, not the assist character data
+- hud
+  corrected a couple class checks
+  added in a twinheal option for clerics in the heal tab
+
+
+210717.01
+- /rest health
+  will apply health checks to your rest %
+  if your health is below that %, you will continue to rest
+- /rest inraid - (on/off) completely enabe/disable resting while in a raid
+  does not account for combat state
+- mob finding
+  some changes to the order of mob sorting to find what to kill
+- lua hud  
+  added some target information
+- tags
+  added an aditional memory clear check for changed tags
+  tags will echo changes again 
+
+
+210613.01
+- cast()
+  made a correction to the ID requirement for casting discs
+- shaman
+  some changes to canni casting and calculations
+- /take
+  will now accept translocate to binds
+- beastlord
+  redesigned paragons to work off of spawn types
+- mode data will display properly again
+- fixed a variable error in /coh command
+- dannet assist
+  added some targeting
+      
+
+210530.01
+- pet sitting has been restricted to TLP..... not changing it. dont ask..
+- /mode scribe
+  buy and scribe missing spells/tomes
+  thanks to @themanwithnoname for this mode..
+- lots and lots of updates to the builder UI
+  still lots to go  
+
+
+210527.01
+- /mode
+  command output is now the same format as all the rest
+- /mode petfarm
+  pet owner will not summon its pet until it gets outside of the env radius
+- heal dannet
+  added some descriptions to the debugs
+- manual assisiting
+  some aditions to the engage% check
+- rest
+  pet classes will have their pets sit while resting 
+- pulling
+  added "a barrel of food" and "a crate of food" to the list of untargetable NPCs:lsNoTargetNPC
+- /build ui
+  opens a Lua editor for building characters
+  there are still a metric shittonne of things to add to this but i wanted to get it
+  out there and get some feed back on it.
+  the sliders are still a little clunky. its being worked on.
+  
+
+210516.01
+- corrected a couple varsets in manual assisting
+- mob finding for pulling
+  some changes to the loops and returns
+- /repeat
+  some changes to the randomness  
+
+
+210515.01
+** Reminder, this is only an update for MQNext users
+- fixed a bad debug in the lua hud editor
+- bard
+  corrected some spawn data
+- tags
+  made it so the sub call would work.. /sigh
+- pulling
+  nav pulling no longer works off a radius maximum (kindof), it is now based of the actual path length
+  the range you set for your pull rad will be the nav length to any mobs it finds
+  mobs are still sorted by shortest nav path
+- /pull navvar ## - % variance you will allow nav pulling to exceed the nav path to get to a mob
+  if pull rad=800 and navvar=15, then you can get mobs at 920 navlength, but still only look in 800
+- several hud updates
+- sorted dannet assisting spawn data
+- rez flagging is now turned on with /mode summon
+- corrected an import option for lists for INI loading
+
+
+210509.01
+- the Wiki is back in play
+- removed a debug in moveto_range()
+- corected a comma in the /repeat command
+- changes how clickitems and burns processes cast_data() to allow for commas, until MQ is fixed.
+- changed some targeting requirements for coprses in rezing. should hold the target better
+- removed the mq2hud warning
+- gather manna changes for wizard / enchanter / shaman
+- bard
+  couple fixes for Vainglorious Shout
+
+
+210507.01
+- i've removed the code that fills the data on the old hud
+  you can either do /unloadhud entropy or /plugin mq2hud unload
+  either way, not using it anymore
+  (i did put in some code to unload the old hud)
+- /entropy hud start - loads the lua hud
+  /entropy hud stop - stops the hud
+  /entropy hud auto - (on/off) will start the hud on mac start
+  ---WORK IN PROGRESS---
+- warrior
+  corrected a legacy facing control
+- removed support for mq2mybuttons plugin
+  i'll make a useful button list in lua soon
+- pet summoning
+  corrected a bad varible for the spell data
+- mob finding / pulling
+  several corrections to the mob finding routine
+  might work now??
+  
+
+
+210502.01
+** Reminder, this is only an update for MQNext users
+- stale DB data checking
+  redesigned it so it should only loop once on an update and
+  not at the check for every table on an update
+- popups
+  control edits now have popups in the form of variable:value
+  if you dont want this shown, turn off /grain 27
+- rezing
+  corrected the spawn data
+- /entropy random
+  i've changed the bools to ints. each one can be its own range of: 0(off)-100
+  when dealing with engages the number is a % high/low
+  when dealing with times/delays they are 1/10th of a second
+- assisting
+  corrected some spawn data
+- necro corrected a couple old ID dead checks  
+- /entropy random
+  repeat ## - the random  dealy for others to repeat what you command. (already existed, just opened it up)
+- gather will force a home clear first
+- removed a few more instances of voodo
+- start of the Lua HUD .. yes its a work in progress  
+
+
+210424.01
+** Reminder, this is only an update for MQNext users
+- monk
+  corrected a dead ID check
+- pulling
+  some adjustments to the loop counting for finding mobs that are possible targets
+  i either made it better, or much, much worse
+- harvest
+  removed a NEXT check
+- disbled /cc alliance till i find a good way to do  them for all classes.
+- corrected ~300 instances of _spell to spellData to keep the damn naming conventions standard
+- shaman
+  corrected the target spawn for splashes
+- cleric
+  removed a dupe command from /chr that was in /rez
+
+
+210413.01
+** Reminder, this is only an update for MQNext users
+- HUD updates
+- shaman
+  sorted the assist target for splash healing
+- /buff group
+  spell data corrected for triggers
+  name data converted to a spawn
+- druid
+  correctd a dead ID check
+- /pull nav
+  adjustment to the nearest spawn search for nav pulling
+  corected the running spawn data
+  i'm sure i broke something else doing this...
+- database cleanup
+  removed all of the old variable cleanup prioor to the new year
+
+
+210411.01
+** Reminder, this is only an update for MQNext users
+- corected a spawn issue with DanNet Healing
+- groups will form again
+
+
+**
+** WARNING ** NOTICE ** READ THIS **
+**
+** IF you are NOT using NEXT, DO NOT UPDATE
+** the new spawn data types will break on normal MQ
+** 
+** And before anyone asks, I'm not going to main two branches. 
+** Next will be out soon enough.
+**
+** TL;DR - I'm no longer supporting Live MQ, only MQ2Next. Do not update if using Live
+**
+
+210410.01
+- MQ2LUA plugin is now a requirement
+- help updates
+  /burn -t - will show you all the tags you have for burns
+  /burn -s - will show you all the map variables for the burn command
+  /burn -u - will show you the commands usage (sometimes, this is a lazy option)
+  /burn -h - will give a summary of help for the options in that command
+  * not all -options are available on all commands, some just dont do anything cause theres nothing to do  
+- check_stick() is now spawn_stick() and completely redesigned
+  should be no more adjusting close/far distances while in combat for large mobs or the small ones
+- check_face() is now spawn_face()
+- /alto
+  should stop auto fire and attack a little more reliably now
+- pull_mob_find
+  should properly identify named and no mez mobs again mobs again making them the priority
+- auras
+  targeting/IDs removed. self only now
+- extensive re-typing of int _tmpID to spawn _spawn
+  well over 1k variable adjustments macro wide
+- the assist and the assists target are now spawn types
+- sub get_asssist_info removed
+- assist checks reduced to 1/class cycle
+  meaning if you class cycle is: melee|heal|misc|debuff|dot|nuke|item
+  you will be checking the assist 7 times minimum
+- fixed an issue with buffing with items that have triggered effects
+- cures will obey the line order now
+- bard
+  some refinement to their movement while singing
+  they should react a lot faster to engage combat
+- berzerker
+  corrected a couple math issues and bloodfurry
+- monk
+  corrected the precsion pregens
+- resting
+  /rest [options] is now the control for rest
+  /env rest has been removed
+  previously toons would avoid rest when any mob was within their /env rad ##
+  this has been removed
+  resting will rely only on /rest rad ## now
+  default is 30. so if a mob is within that range, they will not rest
+  if a mob is just outside that range, and your group is engaging them, they will still rest
+  so be mindful of this radius
+  the rest spawn search is also exposed::stRestSpawnSearch
+  you can change this, but thats on you
+  if toons are full mana/stamina, they will return to standing if able
+  toons resting will remain sitting for 12 seconds (unless combat) to prevent the manna lag meter from bobbing them up and 
+  down like a fucking whackamole game
+- pulling
+  /pull one int|pet|nav
+  is a forced 1 time pull of that method
+  /pull mode watch - seconadry puller, allows them to pull only the mobs in the /watch list
+- all .Stacks checks have been replaced with .WillLand
+- randomizations (an attempt to look a little less bot like)
+  note: this system is not applied while in a raid
+  /entropy random [engage|pet|swarm|burn|rez|variance]
+  engage - (on/off) randomize the toons normal engage %
+  pet - (on/off) randomize the pets engage %
+  swarm - (on/off) randomize your swarm pet engage %
+  burn - (on/off) randomize the burn %
+  rez - (on/off) uses the varriance as a random delay time in seconds to accepting rezes
+  variance # - (1-5) a +/- to the engage % you have set to generate a high/low for the random and delay for rez taking
+
+
+210325.01
+- excluded passive AAs from cast_data() routine
+- druid
+  fixed a missing cast_data call
+- /pull petwatch ## - radius around you to watch for and pull npc 
+  pets when all other mobs are dead
+- /entropy tlp (on/off)
+  start for the isolation some different behavior for TLP play styles
+  more to come
+- shaman
+  i
+- bard
+  some changed to the initial build of the class combat loop order
+  
+
+210319.01
+- /nuke
+  whole-lot-of debugs added
+- mezing
+  several corrections to the spawn IDs being passed around
+  adjsuted the min ae count requirement
+  fixed a missing { on a timer check
+- cast_data()
+  added in melee abilities (bash, kick, so on) check
+- /gather (group) fixed it.. again..
+- gift of manna casting
+  redesigned due to the new spell type changes for casting
+- lsPosition is now editable and retains the settings
+- there was more. but i forgot what it was
+
+
+210318.01
+- area control adjustment for mezzing when there is nothing to control
+- beat another _spell variable into the ground
+- timer adjustment to the /nuke delay mechanics for TLP #deathofme
+
+
+210317.01
+- fixed a not found buff issue causing repeat casts
+- small adjustment to crowd control
+- /take
+  some adjustments
+- /here
+  wrapped a pet control a bit better
+- buffing
+  several corrections to stacking
+
+
+210315.02
+- corrected several missed conversions
+- cast() 
+  forgot the ranknames in the bard casting portion. meh...
+
+
+210315.01
+- /home position random
+  selects one of: free|left|right|rear for positioning on every new mob or combat reset
+  the random choices are weighted to rear, then left/right equally and free least of all
+  you can alter the weights for the random by changing the list lsPosition
+- bard
+  focus scan will now validate bard usable
+  added swarm aa pets back to main class rotation
+- debuffs
+  should stop spamming.. i hope..
+- /nuke sitting
+  should obey the timer a little better  
+- /gather [group] will gather your group again
+- berserker
+  fixed a typo
+- druid
+  added in Focus of Arcanum aa to burns
+- data types and casting
+  complete redesign of the casting sort routine that finds if you are using an item, 
+  or an aa, or spell, whatever.
+- voodoo() has been rewritten into cast() to accomodate the spell data type changes
+      
+
+210228.01
+- druid
+  added in twincast aa/spell rotation
+  stAAImprovedTwincast and stTwincast
+- paladin
+  valiant has been moved up in the chain of agro skills 
+  and min agro requirements have been removed
+- removed the exact matching for buff removal
+  will put it back when next has a broader release
+- class routines exposed: 
+  Warrior, Wizard, Shadow Knight, Shaman
+- debuffs
+  to account for the issues with debuffs of matching names; like Malaise
+  debuffs are now cast by ID.
+  in order to do this, i have exposed the search order for finding what to use first
+- cast type search order
+  when matching names of different types are encounters, this is the order of usage:
+  lsOrderCastType::alt|pulse|spell|disc|item
+  yes, you can change the order
+  yes, you can remove things you dont use. tanks dont really need to be checking songs and so on
+  no, you cannot make thing up and put them in there
+- voodoo()
+  considerable redesign of the sub
+- is_ready()
+  adapted to account for lsOrderCastType and user selections
+- no casting with specific buffs on
+  lsNoCastBuff::fill this with a list of buffs/songs you do not want to cast while they are on, and you wont cast  
+- corrected some Me.Book issues
+- mezing
+  changes to account for non ae mezing on TLP (seriously do they even CC?)
+- /nomore
+  added in an option for DA removal (all casted invulnerability; spa 40)
+- get_assist_info()
+  complete rewrite in preperation for alliances (mostly healers)  
+- class alliance: cleric (in testing)
+  
+
+210222.01
+- TLP slummers
+  added in a sit option for nuking
+  /nuke sit (on/off) will attempt to sit during the delay inbetween nukes
+  you MUST have /nuke delay set for this to function
+- warrior
+  added in a song check for Commanding Voice  
+- buff removal
+  removed the quotes around the string matches
+
+
+210219.01
+- corrected a ranged list issue with mob vs zone checking
+- corrected a debug error with /melee
+
+
+210216.01
+- Next Users
+  make sure the plugin MQ2Lua is loaded
+  if its not, the macro is gonna yell at you...!
+- in macro help
+  a LOT (read almost all) in macro help has been migrated to MQ2Lua
+  Translation:
+    those running normal MQ2 will not be able to use in macro help
+    people running Next, need to load MQ2Lua plugin
+    help can be accessed in two ways.
+      /command -h - will give you basic help/summary for that command
+      /command -u - will let you see usage for that command
+      /command -s - will show you the map associated with that command (if there is one)
+    or
+      /-h will show you all the commands you can get help on
+      /-h command will show you usage and help for that command
+  NOTE: the ingame help is a summary of whats in the wiki. the wiki will remain 
+  the source for detailed documented help
+- necromancer
+  fixed a typo on the exposed class routine
+- berserker
+  /chr resolve (on/off) enable/disable using Frenzied Resolve Disc
+- /cursor
+  some corrections to the outputs
+- /area
+  fixed an error where mob names would not get addeded to poison,slow,ranged and charm
+- /cc ass
+  smart assist settings will no longer toggle
+
+
+210210.01
+- buffing
+  corrected a confusion in crew/other buffing where an item would be converted to a spell
+  and the spell would be memed to be cast and not the item. repeat after me, TLP issues
+- class orders exposed
+  druid, magician, necromancer
+- necromancer
+  corrected swblood to swBlood
+  bloom % is now gather % 
+- cleric
+  unbroke their /chr control  
+- healing: dannet
+  i might have actually fixed the divide by 0 error.. maybe..
+- combat positioning
+  /home movebehind has been removed
+  /home position [free|left|right|face|rear]
+  free - simply sticks to the target during combat, doesnt care where
+  face - sticks to the front of the mob
+  rear - sticks to the rear of the mob
+  left - (currently broken) sticks you to the right side of the mob
+  right - (currently broken) sticks you to the left side of the mob
+  note: yes i know left and right are not doing what they are supposed to do. blame mq2moveutils
+  note2: you will need to reset your toons that used movebehind
+  
+
+210208.01
+- added the following mass group buff commands
+  cleric: /chr mcr (celestial regeneration)
+  ranger: /chr mspice (auspice)
+  beast: /chr mpara (paragon)
+  shaman /chr maid (ancestral aid)
+  druid: /chr mwood (spirit of wood)
+- events
+  removed an event check from an inline target clearing
+  "should" prevent events from flying by
+
+
+210206.01
+- pet weapon begging
+  classes will not beg if you do not have a mage running or they are not in same zone
+- /override targetclear (on/off)
+  this will override the mechanics of keeping a target clear. more noticable with healers than other classes
+  on a personal note:
+    like all overrides. if you use this and it causes you issues, or you dont like it. dont use it
+    this is in direct conflit with a lot of the mechanics of how entropy operates
+- /gather
+  small adjustment to the broadcast options
+
+  
+210205.01
+- bard
+  (yes.. even more corrections)
+  i better be getting some cookies for this
+- pladin
+  removed the automations of: 
+    thwart temp rune
+    steel buff
+    stance buff
+  use them as buffs with now and incombat tags
+- berserker
+  removed stKickintheShins from spam DPS 
+- events
+  added in events for tantor raid
+- dannet
+  corrected a startup check for settings
+- tags
+  added: delaycooldown to buff/debuff/dot/nuke/and somethign else i forget
+  delaycooldown::delays the macro till gems are not in cooldown
+  **
+  use with caution in buffs, excluding buff now, tags are typically checked 
+  before the check to see if you have the buff or not
+  **
+- /area
+  fixed a bug with safe duplicating the zone name  
+- dannet healing
+  fixed a HP/0 error
+- /chr intensity
+  redesigned the sub that fires aa intensity of the resolute. it had issues
+  
+
+210131.01
+- berserker
+  removed a variable that shouldn't be there
+  Added Blood Sustenance
+  Corrected: 
+    Savage Spirit
+    Untamed Rage
+  sorted burn priority again to better support Mangling Discipline
+  Re-did bloodfury spamming on spam abilities
+  re-hardcoded stAugmentedFrenzy
+- debuffing
+  changing the approach a little
+  when debuff values are checked for multi landing debuffs, if one of the landing debuffs is
+  missing or less it will still attempt to cast regardless if the other trigger debuffs are better
+  basically the same idea behind multi landing buffs
+- open /cc mode heal back up to all classes. if you wannd do bad things, thats on you
+- /gather - pulls all your people to you depending on options
+  /gather [all|group|zone|raid] - force a type of gather
+  /gather broadcast [all|group|zone|raid] - set the defaulkt gather type
+  this is being pulled from /home gather. decided i wanted it as it's own command
+  follows all the normal broadcast options for commands
+- increased the delay for group/other buffing to get the buffs populated
+- bard
+  small change to boastful bellow stacking check
+  added stAAVaingloriousShout - Vanglorious Shout AA
+  
+
+210130.02
+- bard
+  removed a bad line of notes.. its late..i'm tired
+  
+
+210130.01
+- corrected a pulling contradiction where /pull chain was set and pulling was inactive
+- exposed class orders
+  monk, bard
+- monk
+  Added support for all 3 precision strike (exspes to add list function for these: Icewalker's / Firewalker's / Doomwalker's precision strike)
+  Added stEarthwalk discipline line (for Earthforce)
+  Added stInnerflame discipline line (for IronFist)
+  Added stSpeed discipline line (for Speed Focus Discipline in Burn)
+  Added stAATonPoStance for using Ton Po's Stance together with stDichotomic
+  Added stAAVehementRage for spamming (confirm to not use with items it doesn't stack with)
+  Added stAADestructiveForce for monks who actually want to try and AE burn
+  Revamped Monk burn order
+  Revamped Monk ability spam order
+  Commented out hardcoded intimidation use
+  Moved poisonous alliance from burn to regular combat spam and commented out in preparation for alliance adjustments  
+- bard
+  Added support for stAAFlurryofNotes (Flurry of Notes to hit during burn)
+  Added support for stAADanceofBlades (Dance of Blades to hit during burn)
+  Changed stAAThousandBlades to stThousandBlades as it is a discipline for burns
+  Note: Intimidation must be configured in /melee if you ever want to use Frenzied Kicks
+- rogue
+  Remove level requirement from mark
+  Add appropriate swarm switch to phantom pet  
+- berserker
+  Added support for stConditionedRetaliation (defensive buff)
+  Added support for Savage Spirit AA during burns (removed hardcode)
+  Removed requirement to have shaman in group for hitting berserking
+  Revamped Berserker Burn Order
+  Revamped Berserker Spam Order  
+  
+
+210128.01
+- exposed class orders
+  zerker
+- agro routine should fire for tank classes again. wasnt my fault!
+- ranger
+  uncommnted the class order variables... oops..
+- change in the designs foro disc and AA casting
+  if this pans out, i'll apply it to items and spells too
+
+
+210126.01
+- unfucked curing on mac start
+- cleric
+  wont waste battle frenzy aa anymore
+  
+- class orders
+  all the classes are set up 4 stages:
+    what they do all the time while in auto
+    what they do pre combat
+    what they do while in combat
+    what they do at the end of a combat loop
+
+  i have started to expose these routines so you can change the order of exectuion
+  following the same class routine order:
+    lsOrderClassBase
+    lsOrderClassPre
+    lsOrderClass
+    lsOrderClassPost
+
+  so, for a rogue, the combat order would be lsOrderClass::melee|burn|misc|debuff|alliance|item|nuke|dot
+  they will use whatever they have turned on in that list, skipping it otherwise
+  
+  as of this update, i have 6 classes converted: cleric, paladin, enchanter, rogue, ranger, beastlord
+  you can see the class order by doing: /chr list
+  for classes not converted yet, this is not an option
+  the initial default orders will follow how the class operates currently
+  
+  i will have a wiki update as to all the available options for class orders and their restrictions
+
+
+210125.01
+- debuff
+  corrected a macro hang when the target would die in the middle of a debuff check
+- cleric/ranger/rogue
+  should no longer crash on mq2 live builds
+ 
+
+210124.01
+- bard
+  Funeral Dirge will not overwrite anymore
+- rogue
+  remove level/endurance requirements for stMark
+- /env dropinvis
+  will auto remove an invis you have on you
+  requires /buff drop to be turned on as well
+- debuffing
+  small change to the debuff comparison check
+- healing
+  you can now control the order that healing is checked by what you have turned on
+  lsOrderHeal::cure|tot|self|dannet|ch|group|xtarget|pet
+  this is the default order for the healing cycle
+  
+
+210122.01
+- correction for /tell controls
+- extended /area no???? to include debuffs
+  /area nosnare target
+  /area nocripple target
+  /area nomalo target
+  and so on
+- /debuff
+  some more comparison and stack checking
+  protection against a null target ID passed
+- /debuff snare
+  is now set to split out triggers
+  
+
+210121.01
+- buff begging
+  have added /t TOONAME ALIAS to the /beg buff system
+  i'm not sure why anyone needs both methods. but its there now.
+- uncommented a lot of the dead checks. hopefully wont spam spell casting after deaths
+- some minor changes to /mode summon
+
+
+210119.01
+- whole'lota changes to debuffing
+ 
+
+210118.01
+- mezing
+  corrected a targeting issues that made the mezer appear to lock up
+  slowed down the control rtoutine for mezing a tiny bit
+  NOTE: mezers need to use smart assist till i sort out the dannet assist for them
+- pets
+  removed the suspend companion controls
+- pulling
+  secondary pullers will re-engage after the main assist has picked up the mob
+
+
+210117.01
+- assisting
+  some adjustments to assisting for pullers/secondary pullers
+
+
+210116.06
+- assisting
+  cant assist yourself anymore
+  corrected a bug with the absence of people check -@Xeniaz
+  
+
+210116.05
+- bard
+  will not cast boastful below until the current cast has faded from the target
+  corrected reflexive from an aa to a disc for pregen
+- /buff group
+  corrected the tag checks
+- /debuff
+  malo comparison corrected
+
+
+210116.04
+- /mode
+  couple small refinements to the combat orders
+- corrected a stacking check in /buff crew
+- assisting
+  MA1/MA2 are gone. no more. deleted.
+  lsAssistDanNet has bee renamed to simply lsAss (will need to rebuild your list)
+  lsAss is used by both dannet and manual assisting
+  - the list is in order
+  - assist must be within your env rad to assist
+  assisting will not lock PCs, only NPCs
+  smart and dannet assisting will follow assist target changes
+  added -
+  /cc ass ma [on/off] to override smart and dannnet assisting in favor of manual assisting
+  manual assist will not follow assist target changes
+
+- some shortcuts
+  you can edit the list for assiting like so
+  /cc ass list - will display the list of toons
+  /cc ass list ToonName add - will add that toon to the bottom of the list
+  /cc ass list ToonName delete - will remove that toon from the list and no one else
+  /cc ass list clear - will reset the list to its default of EMPTY
+  - you can add multiple names at once like so
+    /cc ass list ToonName|Fred|Mike add
+    you cannot delete names like this
+
+  
+
+210114.02
+- missed a Target.ID return in the new assist
+
+
+210114.01
+- tags
+  debuff::cripple::marker /debuff cripple
+- assisting
+  lot of changes to dannet initial assisting, it should no longer flash targets
+  once a mob is in env radius and the assist has it targeted, the assister should hold the target
+- /debuff
+  added in a list control for the debuff order.
+  lsdeBuffOrder::tash|malo|slow|cripple|eradicate|snare
+  you can rearrange, or remove from the list as you like
+  you cannot make up debuff types and put them in there, these are the only types that are used
+  - debuff comparisons::slow,cripple,tash,malo
+    will now detect the debuff on the target vs what you are casting and go with the best
+- /mode hunt will work again
+- /mode farm rof_shard_bodhe 
+  will now use full classs combat routines
+  threw in an extra rest check after step 1
+  resting/buffing will will be done at the start of step 2 only
+- events
+  ToV AoW event shouldnt crash anmymore
+- /cb 
+  added in an 'm' option for buffing minions
+  any cb command will now break invis when used
+- /cm command has been removed
+- corrected a targeting error while in manual for the new assist system
+- many WIKI updates
+
+
+210109.01
+- /pull stop
+  removed an extra "(" in a hard stop check
+  corrected the observers check (all @dannuic)
+  puller will watch themselves now and not just the group
+  should break out a little faster as well
+  reduced the delay in between the pull stop checks form 30 seconds to 6
+- spell casting
+  added an auto fail for SPA 96 (silenced)
+- /debuff
+- /admin spa
+  fixed the gem#/song#/buff# options to return the correct name
+- /entropy fizzles ## - number of times to retry on a fizzle cast  
+- /debuff (complete rewrite)
+  now conforms to all other list choice controls like nuke/dot/defense/whatver
+  12 slots to use
+  available to all classes
+  tags added for debuffs:
+    debuff::eradicate::marker /debuff eradicate
+    debuff::malo::marker /debuff malo
+    debuff::mez::marker /debuff mez
+    debuff::mezae::marker /debuff mez ae
+    debuff::slow::marker /debuff slow
+    debuff::snare::marker /debuff snare
+    debuff::tash::marker /debuff tash
+  debuff cast order is:tash/malo/slow/eradicate/snare. mez it is on its own system
+  debuffs with multi casting effects will be split apart and all effects will be checked
+  all the old debuff variables have been removed
+  you will need to set up the ones you want to use
+- removed all the old FLOW variables
+- /buff raid and /buff group will work again
+- assisting.. yet another complete redesign
+  assist order: smart -> dannet -> ma1/2  
+  /cc ass list
+    output the contents of lsAssistDanNet
+    this is a list of people in your dannet you want to assist
+    it will find the first person in the list with a valid target and assist that person
+  /cc ass smart [1|2|3|g] all function on MQ2Next. i believe the live version of MQ is still buggy
+  an available xtarget is no longer a requirement for any assist method. xtarget is no longer used
+- /port aa NAME will actually cast the aa
+    
+
+210102.01
+- /repeat - targeting issue fixed
+- curing
+  took it down to its base and rebuilt it. cross your fingers
+- observers
+  complete redesign of how observers are made and watched, for any given toon
+  i didnt like the slow bit
+- pull hardstop
+  has been changed to work off existing observers and not queries
+- /entropy dannet
+  all dannet settings are now visible and adjustable
+  however, its best you dont change them. the defaults are there for a reason
+- /admin obs [toonname] - will show you everything you can see on another toon
+  this information is usable in tags
+  or just to make sure its working
+- dannet
+  you will need to update again for the current fixes
+
+
+210101.01
+- warrior
+  changed stCommanding call to require no target
+- paladin
+  marrs gift - lot less restrictive on its usage and is now only checking mana
+- mezing
+  targeting issue found/squashed
+  added in an attack off before single mez cast because bard
+- fix for spawn names in the assist error correction
+- observers
+  considerable changes to observer generation, a tad slower on the initial run
+  considerably faster from that point on and much less spammy 
+  dont really even need to turn grain 17 off anymore
+- dannet
+  you need to update the plugin
+- in macro help
+  i'm changing how the / commands work for help in the macro. so, if you find one thats not working, move on
+  i'll get them all soon enough, but its a fair bit of work
+- /heal dannet
+  back on the plate and from my testing, might even be fastter then group healing
+- /cure
+  works like a fucking champ
+
+  
+
+201230.01
+- adjusted the relay tells do it doesnt try to relay from the drive toon
+- /nomore invis
+  will clear rogue SoS
+- target setting
+  a literal shittonne of changes to setting a target. keep an eye out and 
+  lemme know if you see any shenanigans 
+- /tag dropinvis
+  adjusted to use the new spa method
+- corrected a flaw in the assist logic when the assist was either not there, spelled wrong or no assist were set at all
+  in this case, targeting should remain clear
+- some controls added in for MQ2Lua
+  my toys, not yours
+- beastlord
+  some more adjustments to the single target paragon routine
+
+
+201226.01
+- hud update
+- k since removelevi works for crap, i made my own
+  /nomore [levi|invis|SPA type|list|all]
+  levi - will remove all levitaion buffs
+  invis - will remove all invis buffs
+  SPA type - will let you type in any known spa type and have it removed
+  list - will give you a list of all SPA types (long list, like 500ish, grab you ankles)
+  removeall - removes all buffs. you tried it, not me..
+  this is not a broadcasted command
+  the levi and invis are shortcuts for full SPA types, more can be added if found useful
+  turn off grain 28 if you dont want to see the notifications
+- broadcasted commands like cls, enter, lesson, will default to self when
+  set as broadcast to group and you are not in a group. same for raid broadcast
+- druid
+  corrected a typo in destructive vortex
+- beastlord
+  added in stAEClaws line for AE stuffs
+- corrected a SPA error for best in class casting
+- /build set
+  small adjustment to the timing and hud update
+- shaman
+  talisman cast will now check for dicho line spells
+- /cc ass
+  corrected a bug when setting ma1/2 would also set smart as ma1/2
+  i honestly have no idea what i was thinking when i did that
+- /admin spa - 
+  gem## - the spell in gem #
+  buff## - the spell in buff slot #
+  song## - the spell in song slot #
+  pregen - bug corrected for DB updates
+- /watch - watches for spawns in a zone
+  list - shows all the current mobs being watched for
+  active - on/off switch to use the system
+  add - adds the current target to the watch list
+  delete - deletes the current target from the list
+  reset - resets all of /watch to default settings
+- buffing and healing
+  corrected some target clearing issues
+- /area
+  cosmetic changes to the control list  
+- mez
+  additional check for exempt mobs
+  
+
+201222.01
+- warrior
+  corrected a typo in stAAWarsSheolsHeroicBlade (amazing i ever got it right)
+- berserker
+  removed the extra stVengefulFlurry in class init
+- pulling
+  for people that are just as impatient as all fuck
+  /pull chain # - is the count of mobs in camp; to start pulling again
+  some notes:
+  - this is only good for secondary pullers
+  - if the secondary  puller is actively engagegd with a mob, its not gonna stop, even if theres only 1 in camp
+  - mob count check to pull more is only done inbetween kills
+  intervention pulling - a cleric or shaman must have an intervention heal in their /heal list
+  it must be tagged interventionpull
+- /cb s will not force shrink you if shrink is turned off
+
+
+201218.01
+- druid
+  removed an extra ) in the burn routine
+  removed a couple old AAs no longer being used
+- corrected the misleading off display from the various / commands
+- /melee
+  this is available to all classes
+  functions just like other / commands; nuke, dot, defense, so on
+  12 slots to use
+  tags can be applied
+  DO NOT use the melee skill taunt here. well you can, but its just dumb and will do nothing for you
+  taunt is used in /agro, so leave it be
+  /cc melee is no more (all the old variables should be gone)
+  if you add a skill to /melle and also have it set as /autoskill, it will be marked auto and skipped in the rotation (EQ will control it)
+- auto gem swapping will double check cursor items
+- /admin pregen will now echo as it iterated through the lists
+- /pull outrun ## - sets range from your pulled target, that when exceeded, will set the character to walk
+  allowing the pulled mob to catch up. once the mob is in range, the puller will reset to running
+
+
+201215.01
+- beastlord
+  corrected the loops for mana feeding
+- cleric
+  corrected an infinite loop in the groupregen routine  
+- pulling
+  made some changes to the los requirements for pet pulling, should help pet pullers stop more reliably before they get to the target 
+- all automated buffing will be skipped if a hostile mob is within a toons safe env radius
+- /cls
+  now obeys the broadcast options all|group|raid|zone 
+  the default is group
+- /crew buildas - with no name will now format your hard drive and kill your gold fish
+- /edit adjusted to allow abilities to be passed like bash or kick  
+- /buff shrink height ## - for the max height you would like to be. default is 2.04
+- rez
+  removed the isdead check froma death/rez from the casting check
+  
+
+201209.01
+- magician
+  change to the output for /chr pettype command
+- monks (ffs)
+  added in an exception to the zoning event for Drunken Monkey stance
+- /state [all|group|raid|zone]
+  will tell you the states of several variables for toons you box.
+- /state broadcast - sets the debault option.
+- /invis
+  now obeys the broadcast options all|group|raid|zone
+  the default is group
+- character and guild port items updated for CoV
+- cleric
+  corrected an ID in check_mana
+- beastlord
+  corrected an ID in check_mana
+
+
+201207.01
+- corrected a spawn ID issue for the check_mana subs in BST and CLR
+
+
+201206.02
+- corrected a map error for the changes in dannet delays
+
+
+201206.01
+- /grain
+  added a list option to see what all the #'s do.
+- undeleted the main Entropy dannet channel. oops..
+- turned off the debug for /cc ass
+- beastlord
+  fixed (i think) the paragon % controls
+  /chr para class - set the classes you want to use group/focused paragon on
+  focused paragon will now cycle your group and not just the bst. bst is still first tho
+- cleric
+  /chr qp pct ## - sets the mana% to use QP on another toon in your group
+  /chr qp class - clas control for qp in your group
+    
+
+201203.01
+- /env nukeloop has been moved out of env
+  it is now /nuke loop
+- some DB moves; the following variables have moved tables
+  character::stPctStopNuke -> nuke::stPctStopNuke
+  character::stNukeDelay -> nuke::stNukeDelay
+  character::swNukeLoop -> nuke::swNukeLoop
+  character::stDotRefresh -> dot::stDotRefresh
+  character::stPctStopDoT -> dot::stPctStopDoT
+  You will need to reset thes variables if  you were using them
+- small adjustment to DB pathing for MQ2Next. why are people putting spaces everywhere?
+- some updates to mybuttons
+- bard
+  corrected a couple unprotected defines for PREGEN
+- cleric
+  will hold its target a little more so it doesnt look so mechanical
+- xtarget
+  added in additional checks for the protect list to prevent duplication in the xtarget build
+- mana class check added for nuking mana % stop
+- all overrides that are enabled will be displayed at the macro start
+- pull
+  added a los check for additional pullers to engage
+  some small changes to how pullers wait for mobs get back to camp on a pull
+  disabled arc pulling till i can figure out why my math sucks
+- buffing
+  group and raid are now adapted to use SPA to get best spell in book
+- CC shouldnt lock targets while invis anymore
+- /entropy dannet
+  nettimeout ## - will adjust observer delay (10ths/second)
+  querydelay ## - will adjust the max time to wait for a response from a query (10ths/second)
+- corrected a collections crash in single/no entry commands
+
+- there has been a complete rewrite of the /crew command and EVERYTHING associated with it
+  - channel communication
+  - group formation
+  - available roles
+  - shared data
+  the following is a summary of the new commands
+  i suggest you read the wiki for a full description
+  
+  /crew add character - creates character in db (this is also done auto on login for that toon)
+  /crew add crewname - adds a crewname to the database
+  /crew add member - adds a character to a crewname
+  /crew add role - adds a character to a role ( leader, assist, so on)
+  /crew list - NA|crewname
+  /crew delete crewname - deletes a crewname and all associated roles
+  /crew delete role - deletes a character role from a crewname
+  /crew form name - forms a crewname and assigns roles
+
+- commands: /here /take /enter /on /off
+  now have the following options
+  all - covers all toons in your entropyall dannet channel
+  group - covers your group members
+  zone - all dannet members in your zone
+  raid - all dannet members in your raid
+  the commands /here /on /off are not executed by the issuer as usual
+  you can set a default channel for each of these commands as well
+  a command issued w/o an option will execute the default option
+  eg. /here broadcast [group|raid|zone|all]
+  
+
+201126.01
+- controls that have list additions will not show [list] in the options
+- override splashhurt
+  allows a cleric to ignore the hurt counters and maintain a constant splash routine
+- magician
+  cosmetic changes to the class controls to match the last set of changes
+- cleric
+
+  cosmetic changes to the class controls to match the last set of changes
+- moved all dannet query delay times to the DB.
+- corrected DB pathings to account for spaces
+- corrected INI pathings to account for spaces
+- small change to loot auto delete
+
+
+201123.04
+- corrected a targeting issue for self only buffs on the new temp buff routine.
+
+
+201123.03
+- /mode petfarm - some small fixes
+- /debuff tash
+  corected the display output for the control
+- temp buffing
+  (might wanna sit down for this)
+  all class temp buff references have been removed from their character databases
+  (this does not include knight rune line)  
+  a marker tag has been added for temp buffs
+  tag::buff::temp
+  temp buffing follows the same tag rules an any other buff
+  temp buffs are by default on a 30 second timer
+  only one (1) temp buff will be cast per 30 seconds. this is intentional
+  they are only cast while in combat (cleric is the 1 exception to this)
+  temp buffing is only for people you box, in your dannet, not your next door neighbor
+  this does not work on pets. no, i'm not gonna make it work on pets
+  temp buffing does not split apart spell SPAs, if you need that, stick with normal buffing
+- tags
+  added - pull - category for pull tags
+  added - tag::buff::temp for temp buff marker
+  tags will now accept character names
+  READ THIS! if you fuck it up, its on you..
+  to create a tag for a toon it MUST follow this pattern:
+  /tag buff Toonname "marker name"
+  e.g. /tag buff Fred "marker name"
+  DO NOT deviate from that pattern. if you do, the tag will not work, and the 
+  filters for /build save will not catch it causing you to share your character names with others
+- /build save
+  will filter out (read as; completely remove) all tags with the eval set to "marker name"
+  
+
+201120.01
+** WARNING ** MACRO BREAKING UPDATE !
+  I have changed the paths are stored for database locations inside the macro.
+  I have also changed the macro file path structure.
+  It was macros\exspes it is now macros\entropy
+  Rename exspes to Entropy and you should be right as rain for the pathing
+  The file to start entropy is now start.mac. so change any of your hotkeys
+  (no complaining, there is a reason for all of this)
+  we now return you to your regularly scheduled program
+
+- some corrections to the PBAE nuke section
+- tag
+  nuke::pbae::marker for point blank ae nukes
+- several control cosmetic updates
+- more work on mq2mybuttons 
+- auras
+  lot of work on them, hopefully to help them stop trying to recast whats already there
+- /crew #
+  made it a bit faster
+- rest
+  i have reverted a portion of the rest routine. toons will return to standing when a hostile mob is
+  within their /env rad ##
+- many, many! many!! edits to the wiki  
+  
+
+201119.01
+- /buff now
+  added an additional check for now taged buffs in the misc_combat routine for all classes
+  i advise you keep now buffs very limited. abuse them and they will slow down the toon
+- FLOW (routine markers) markers have been commented out
+- aux - should be no more fuckery 
+- /chr invis delay ##
+  add in whatever delay you like to help for your lag to the /invis command. this is in 10ths of a second
+
+
+201116.01
+- all tabs converted to spaces
+- /debug other invis added
+- /invis
+  now pulls the settings you have in /chr invis
+- cleric
+  will do group regens again. prob shouldnt have left it commented out
+- corrected /grab command for next vs. live
+- /admin 
+  sqlcheck - will throw out some spam so you know its doing something
+  added in a lot of help on the admin commands
+- events added for griklor  
+- /port
+  lots of changes
+  /port see item|guild|vendor|wiz|dru
+  still a lot of work to do on the class ports. but the guild hall, guild vendor, and personal items work
+- tags
+  self tags will ignore class checks now. @TempusX for the find
+- auras will now read the buff name convention of |target type|subcategory|spa
+  if they are a spell, not tried discs yet
+- made another change to the rest radius.. be warned; i could have seriously broken it with this one.
+- magician
+  moved the AAs to the database
+  corrected 3 tarrgeting issues
+- necromancer
+  moved the AAs to the database
+- monk
+  moved the AAs to the database
+  
+-- Changes to Controls --
+  - i've added in some of the `/control option` commands that are one shot, like /cc force or /minion build
+    they will be a blue color to stand out a little, and my daughter picked it so suck it up..
+  - changing the `use` options in the controls to `active` so they follow the same pattern
+  - /cc ass has been changed a little. to change smart assists its now /cc ass smart g|1|2|3
+
+
+201106.01
+- /gtfo
+  https://entropy.exspes.com/wiki/index.php/GTFO
+- several /aux updates
+- /pull
+  https://entropy.exspes.com/wiki/index.php/Pull
+- /heal hot
+  pct - ##% of targets health to use
+  active - use single target hots or not
+  (this does not include the AA focused regen)
+- entropy.sqlite updated
+
+
+201104.02
+- left a pulling debug on.. meh
+
+
+201104.01
+- EMU servers
+  you are now safe if your server has a space in its name
+- /pull 
+  stop (hard stop)
+    should now pause pulling if a member in your party has any type of rez effects  
+    adjustment to area spawn check
+  arc ##
+    sets pulling in an arc out from your current facing direction
+  some refinements to nav pulling
+- single HoT spells
+  corrected a tag issue in the heal pool search
+- wizard
+  redid a lot of the variable names. probably easier to start it over
+- /env rest rad ## - sets the safe radius for no mobs to rest in
+  default is 30
+ 
+
+201021.01
+- wizard
+  moved hardcoded class AAs to DB
+- correction for /cecho   
+
+
+201019.01
+- ranger
+  changed how it gets to ranged burn
+- /area
+  /debug zone area
+  mobs with commas in their names will now record and register properly
+- /rez takecall
+  you can turn on or off taking call to corpses
+  if left off, all calls to copse on your dead husk will be declined
+- mana recovery clickies -@themanwithnoname
+  macro will now search your inventory and register any you have
+  /chr manarecover ## will still be the starting point to use those clickies
+  but, if the clickie returns more manna then you need, it will be skipped and used when needed
+  will not let a clickie kill you from HP loss
+- casting (aa/spell/disc/item/song)
+  added in an absence of a passed target id check along with the dead check
+  its possible corpses are poofing before snares/debufs are getting cast
+- shaman
+  moved the hardcoded AAs to the DB
+  moved all canni controls to /chr canni
+  canni rules:
+  will not use if returns more mana then needed
+  will not use if it will kill you
+  will wait to use if you set a min mana % 
+  will not use if your HP is < /chr canni hp %     
+- cleric 
+  small adjustment to /chr primary
+- corrected some debugs in a few class incs
+- /buff self - should check the clickie buffs and not the clickie now.
+- /buff crew - see /buff self
+- warrior
+  changed a couple target checks from name to ID
+
+
+201003.01
+- /nav pathlogic - (on/off) (default on)
+  on=use path length to find a target to pull
+  off=find nearest mob to pull as the crow flys
+- several adjustments to looting while in a raid, but not in a raid build
+- mezing
+  trying something a little differet
+  the goal is to get single target mezing to be more responsive for TLP that
+  do not have access to AE cc yet
+
+
+200929.01
+- corrected a left in command and a debug
+
+
+200928.01
+- monks
+  they have hiatus now. i dont know why, but they do
+- /entropy loopdelay #
+  0-9 (default 1) 0 being off
+  changes the main loop delay of the macro. this is in 1/10ths of a second
+  this is the number of cycles the main macro loop does. the higher the number the less loops
+  the default of 1 is 10 cycles per second, a 5 would be 2 cycles per second
+  adjust this, ONLY if you are experiencing a FPS drop
+  NEVER take past 9. i honestly wouldnt advise going over a 5
+- /mode petfarm
+  some updates to the pulling
+- pullin (no not that)
+  /pull - now contains all the commands and controlls for whomever is puling.
+  it is also a line of usable things to pull with when using /pull with other
+  /pull other - will use whatever ites you set to pull with in /pull list
+	 the design is just like nukes or dots.
+	 i will update the wiki slowly.. er shortly..
+
+
+200921.01
+- self buffs
+  made some logic changes for AAs that pull your highest level spell for casting
+- inline delays
+  corrected a few more
+
+
+200917.01
+- corrected the default edit routine for spaces in "multi words" passed
+- removed 3 inline delays (2 in looting, one in manual no combat). #alwaysknightlysfault
+- added assist corrections to burn() and misc_dps() routines for all classes
+- cleric
+  altered the burn routine for healing
+
+
+200914.01
+- increased the delay for ${AdvLoot.LootInProgress}
+- wizard
+  moved the AAs to the database
+  some adjustments to the harvest code to enable use by TLPers
+- shaman
+  corrected a sqlite call
+- wizard
+  corrected a delcare for /admin pregen command
+- corrected some checks for glyphs
+- /debug other staminarecover
+- corrected a map for stRest (the melee rest disc line)
+- monk
+  commented out the monkey line of discs till i can find a
+  good way around it breaking the zoning emote
+
+
+200903.01
+- corrected an old sub name for magician gather_manna routine
+- small adjustment to tag updating
+- added monks to intimidation
+- predictive combat
+  https://entropy.exspes.com/wiki/index.php/Prediction
+  this is a test run of the system. yell if you find issues wsith it
+
+
+200829.03
+- corrected a bad member in the melee distance check for pulling
+- added some crash protection around the pulling hard checks
+- added shadowknights to the new best in book pet summoning
+- added several AUTO checks in the pulling routines
+
+
+200829.02
+- correction to the hard pct and time stops ending the macro on the puller
+
+
+200829.01
+- moved food and drink maintain levels to database
+- moved pull radius step increment value to database
+- /debug combat hardstop - enable debugging for the pulling hardstop point for endurance and manna for group
+- pull hardstop design corrections. should be a bit more reliable now
+- rogue
+  /chr nosneaktie - (on/off) can disable sneaking while tie is active for servers that do not have the sos movement boost
+- bard
+  uncommented the majority of the mez routine checks. the end must really be near..
+- pulling
+  added in some error corrections when additional mobs are in camp and the puller seems to target and release constantly
+
+
+200827.02
+- missed a debug
+
+
+200827.01
+- buffing should account for those of you that do not have full access toons
+- pets (minions)
+  i have removed stPetType
+  all pet classes will now simply use the best pet in their book
+  mages can choose by elemet type
+- magician
+  /chr pettype [air|earth|fire|water] - set type type of pet you want to summon
+- all classes
+  removed a bunch of old commented code
+- tags
+  writing over/correcting a tag you created will clear the running variable that stores it
+
+
+200824.01
+- corrected a target ID detour in engine2
+- added oodles more death checks
+- warrior
+  corrected a target call in main loop taunt
+- ranger
+  changed the summer switch to an int. you can set # of mobs in area to start using summer nuke. 0=off
+
+- testing a new way to enter buffs
+  instead of using the spell name, you are entering three paramaters to help narrow down the spell
+  |one = the .TargetType of the casting spell
+  |two = the .SubCategory the casting spell belongs too
+  |three = the attribute name we want to look for to filter out the best spell.
+
+  the following examples will find the best version of the spell you have in your book
+
+ -eg1: cleric single Righteousness
+  /buff 1 "|Single|Aegolism|Max HP"
+  in this example we use the proc Righteousness which has an attribute Max HP
+ -eg2: paladin brells
+  /buff 2 "|Group V2|HP type two|Max HP"
+ -eg3: chanter group haste
+  /buff 1 "|Group V2|Haste|AGI"
+  for this one we look at the AGI stat as the measure since melee speed incerase stops at 68% around lvl 95
+  you could use any of the stat bonues. AGI was just an arbitrary choice
+ -eg4: chanter single mana regen
+  /buff 3 "|Single|Mana|Max Mana"
+ -eg5: chanter Legion group rune line
+  /buff 10 "|Group V1|Spell Guard|Spell Guard"
+ -eg6 chanter group mana
+  /buff 1 "|Group V2|Mana|Max Mana"
+ -eg7: ranger enrichment line
+  /buff 13 "|Group V1|Combat Abilities|Fc_BaseEffects"
+
+  Notes: This does not replace the current system of buffs or alter it in any way. This is a test run,
+  I'm not completely sure how well this will adapt, but.. I have been running this on 5 of 6 toons for a
+  couple days now and have noticed no hits in performance.
+  you can find out all the information about a spell with the command /admin spa "FULL SPELL AND RANK NAME"
+  This only works on spells in books. Not AAs/discs/items, I'll look into those later.
+
+
+200819.01
+- some adjustments to ranged item summoning
+- curing
+  altered order of AAs, go big or go home
+- warrior
+  left in some uncommented notes. so, i took them out
+- healing
+  fixed a rather stupid copypasta bug in pet healing.
+- stick behind
+  some logic changes to see if i can get it to work a tad better
+- rogue
+  some adjustments to sneak attack
+
+
+200815.01
+- /agro hold ##% - the minimum % aggro you want to hold
+  for classes that can taunt
+- warrior
+  moved the AAs to the database
+	added in the new taunt controls
+- paladin
+  some adjustments to the agro routine
+- shadowknight
+  some adjustments to the agro routine
+	added in the new taunt controls
+- ranger
+  corrected the target id passing in misc_combat()
+  added in the new taunt control
+- druid
+  moved the AAs to the database
+- epics
+  epics go in /clickitem or /burn
+  use epic1, epic15 and epic2 as the name
+  eg. /clickitem 15 epic2 or /burn 3 epic1
+  apply any tags as you would normally
+- cleric
+  some tweakign to arbitration
+
+
+200813.01
+- rez
+  complete redesign of the priority loop
+  /rez line - alter the order of the priorites
+  /rez # - (on/off) switch for a specific priority
+  /rez list - lsit all the stuffs
+  and so on, like most of the normal commands
+  removed the /corpse component dor now. so it will rez the corpse in place
+- /burn spinup wont kill your goldfish anymore
+- taunt
+  moved to /agro
+  moved the activation out of melee skills into its own sub (testing with pally)
+- zerker
+  put engine3 back into its main class routine
+  finished moving remaining AAs to the DB
+  should engage in combat again. wasnt my fault.. honestly!
+- paladin
+  some minor alterations to combat flow
+
+
+
+200810.01
+- /entropy concolor - on/off will use the targets concolor for display
+- /agro
+  /cc melee taunt and /cc agro have been moved to the /agro control
+  /agro active - on/off switch for using a class agro skills to be the big dick
+  /agro taunt - has been changed from on/off to a ##% (0-99). 0 for off
+  you will need to reset the value on your tanks, make it as aggressive as you like now
+- /rez ic should work properly now
+
+
+200808.01
+- voodoo
+  moved the MS delay time to swap weapons out to the DB.
+  its in maHard if you want to edit it.
+- /chr
+  all class controls adjusted to be more uniform
+- beastlord
+  moved all AAs to the DB
+- corrected several more missed sub names
+
+
+200807.03
+- in this corner we have the bard standing at lvl 112
+  and in the opposing corner we havve a bloodied and beaten exspes..
+- bards
+  will now obey the /chr refresh time for their songs. it is in seconds btw..
+  complete redesign for the bard swap. blame dannuic for this
+  it is now based entirely off IDs. should be no more problems with matching
+- sqlite
+  zone data should account for locked files
+
+
+200807.01
+** TLP QoL round 2
+- bard instrument swapping
+  /chr swap [active|primary|secondary]
+  active - the on/off switch for using instrument swapping
+  primary - your primary weapon
+  secondary - your secondary weapon
+  No, i dont want to use a bandolier for this.
+  /chr scan - will rescan your inventory for the best instrument mods (or you can restart)
+
+  On macro start, the bard will scan its inventory and creat a map of the best instrument mods it has.
+  When the bard goes to play a song, if there is a swappable instrument for that song type, that is
+  not already equiped, it will swap the instrument out in the last 1.5 seconds of the song cast.
+  After the song finishes, it will immediately swap the weapons back.
+  This process continues for every song cast.
+
+- druid
+  corrected the burn sub name
+- paladin
+  fixed the pally agro sub name /sigh
+- /admin pregen
+  this will force an update of all the pregen data (spells/AAs/Discs/Songs)
+  that entropy populates for you, to what you currently have in your book for you level.
+  It will NOT reset things like /buffs /chr or other control settings.
+  JUST the pregenerated data.
+
+
+200805.01
+** The long awaited TLP edition
+- gem mem routine
+  increased the base wait time to allow for extended mem time spells
+- enchanter
+  corected the sub name for mis_combat()
+- rest
+  corrected the heal check sub names
+- peeps should no longer try to melee when its turned off
+- adjusted the distance option for pulling with melee
+  it will no longer obey the /cc pull navstop distance option
+  its stop distance is now default 80% of the targets max melee range
+- DB pregen entries where a toon is too low to have any of the spell family
+  line will now default to FALSE
+
+
+200804.02
+- wizard
+  corrected the class init sub name
+
+
+200804.01
+- ranger
+  moved the remainder of the AAs into the DB
+  added back in ToT healing. i dont know where it went. dont ask..
+- rezing
+  corrections to the rez priority loop
+  relocated an errant /declare. it was unhappy in its current position
+- all classes
+  converted to the new parsed #include design
+- sqlite
+  pragma=WALL has been added to all shared databases
+- /mode farm
+  rof_shard_bodhe - some more small adjustments
+  5 tears of alaris completed now..
+- loot
+  if you have something checked in the advloot window
+  like Always Greed, or Need, it will override the
+  database settings and use advloot like you have it checked.
+  should be a little faster too
+- /chr invis [self|group|selfivu|groupivu] [name]
+  currently this setting is only being used in /mode, but it
+  will be expanded as needed. next stop is the /invis command
+
+
+200801.01
+- bard
+  fixed the singing in combat... again..
+- /mode farm
+  rof_shard_bodhe - a lot of small fixes
+- /navto now takes an optional invis switch
+  /navto [target|spawn|wp|loc] [name] [invis]
+  RNG/DRU/SHD will use their instant single invis AAs. everyone else is hardcoded to Cloudy Potions
+  if you dont have access to these, sorry. this overrides the nocast while moving, so it has to be
+  an instant cast invis
+
+
+200728.01
+- bard
+  fixed the bard pulseincombat tag, it should do things in combat now
+  moved all AAs to the DB
+- /mode farm
+  rof_shard_bodhe - will farm the quest in Shards Landing - Fear Begins at Home
+  this is the no down time quest for shard farming for the tear.
+  i highly advise you have a metric fucktonne of invis pots on you
+  notes:
+  - use at your own risk
+  - if you cant solo these mobs normally, get a dps merc up or a healer
+  - if you get to less then 40 Cloudy Potions, it will end
+  - if your mesh sucks, it will do sucky things
+- removed the stupid here echo in casting
+
+
+200727.01
+* on todays episode of wtf did he change this time, we show you the changes in /rez
+  and how to play well with the group stealing your named
+
+  https://entropy.exspes.com/wiki/index.php/Rezing
+- all rez data has been moved to the environment_rez table in the character DB.
+  you will need to reset your /rez options.
+- you can now control the priority spawn search strings for rezing. there are 8 available
+  the first 6 match how rezing has always been done. change them at your own peril
+  the remaining 2 are unused, for now
+- all classes now have access to:
+  lsRezIC - list of things to rez incombat with
+  lsRezOOC - list of things to rez with while out of combat
+  if you are not a rezing class, these lists will be EMPTY by default.
+  if you are a rezing class, these lists will be populated with the default rez AAs
+- token rezing has not changed
+- /rez dannet - on/off switch to use dannet rezing or not
+- /rez ic - on/off rez while in active combat
+- /rez ooc - on/off rez while out of combat
+- /rez give - has been removed.
+- /rez other (as in use somethign else to rez with) is no longer a thing.
+  can rez with whatever you want using the ic/ooc lists
+- cleric
+  /chr divinrez has been moved to /rez divine, will only shows up for clerics
+  adjusted focused reuse for Issuance. hopefully wont get stuck in a loop anymore
+
+- HUD has been updated to reflect the latest buff and rez changes
+- i've split off the zradius for pulling
+  /cc pull zrad ##. default is 60.
+- dropping buffs
+  /buff drop - on/off to use enable buff removals
+  lsDropBuffs - add the buffs like any other list
+- mac start will now delete conflicting aliases.. like KA debug.. bitches...
+- druid
+  some corrections on the pregen data
+- PREGEN lists will now accept AAs
+
+
+200720.01
+** BARD BREAKING UPDATE ** (i loved typing that...)
+- /area see
+  shows all the name settings for the current zone
+- healing::dannet
+  will account for missing spawns
+- weighted healing
+	shouldn't try imploding the universe anymore with division by 0
+	.. this is a completely different approach. so, will have to see how it goes for a bit
+- /invis
+  round three of: Dear god quit chain casting invis...
+- safezones
+  corrected an issue were the safezone DB field wasnt being generated on entering a new missions
+- tags
+  song::pulseooc - marker for songs to play while out of combat
+  song::pulseincombat - marker for songs to play while in combat
+  song::pulserest - marker for songs to play while resting (or just use OOC??)
+- bard
+  needs tags for the types of songs to play.. read up!!
+- mode
+  petfarm - corrected the hud notice so it reads correctly.. copy paste fail..
+- druid
+  updated the healing debugs
+- burn checks are now checked on entrance to all melee routines, nuke, dot, heal
+
+
+200716.01
+- corrected a debug from the mac start option changes for the hard stop checks
+- corrected an error in rezing always taking your own rezes
+- shaman
+  corrected assist info for alliances
+- removed a castresult reset from the start of voodoo(). i'm not convinced this is the aa spam
+  problem, but its a start
+- healing changes
+  restrictions: removed them. if you want to be a wizard and heal xtarget people.. why the hell not
+  you do you.
+  /heal point - all clases now have access to all class points
+** new healing mode
+  /heal dannet
+  will heal all your toons that are in the entropyall dannet group
+  does not exclude your toons that you may have in xtarget or group
+- ${hurtDead} can now be pulled from group/dannet healing. int return
+  healing routine variables - https://entropy.exspes.com/wiki/index.php/Healing#Routine_Variables
+- / commands will take "names of spells" a bit more reliably
+- tags
+  i've added a few dannet variables for tag usage. they are in the form of toonname_TLO, like so
+  fred_CombatState - Freds combat state. returns string
+  mike_PctHPs - Mikes current Hit Point percent. returns int
+  bob_PctMana - Bobs current Mana percent. returns int
+  tom_PctEndurance - Toms current Endurance percent. returns int
+  * NOTE, the character name has to be lowercase.
+  I can open more on request
+
+
+200712.02
+- /heal break
+  will watch the intended targets health. if it happens to hit the healpoint you have set for that class
+  it will stop the cast and move on. the HP check is 3/second. this is only applied to spells and not
+  items being used for healing.
+- /buff shrink
+  corrected a bad variable from all the tag changes
+- redesign of mac start options
+  https://entropy.exspes.com/wiki/index.php/Install#options
+
+
+200712.01
+- /tag
+  added some more "protection" to the creation routine
+- beastlord
+  should be a lot more aggressive using paragon for group members
+- voodoo()
+  some corrections made so it will let casts be completed on corpses for rezing
+- /build
+  updated for new tag system
+
+
+200710.01
+- removed pet targeting requirements for buff checking (some peoples kids...)
+- tag
+  nuke::totem - marker for totem type spells, like shaman debuff totem, or necro skull aura totems.
+- worked around a _bug_ thats causing some variables to not get defined properly
+  things like curing and mana regen clicks will work again.. for now
+- shaman
+  shoudnt spam its checking its pet all the time
+- bard
+  removed an extra FALSE that was doing absolutly nothing. i mean, it could have just stayed ther forever
+
+
+200709.02
+- engage % logic issues
+  so, toons with /cc mode heal and CC enabled, were getting past the engage % checks and going balls deep soon
+  as something was targeted when they also had nuking/dotting/melee enabled. this should be resolved. now, they
+  should only go balls deep with written permission
+- tags
+  more were found in buffing other merc/RL players. they have been corrected
+- reversed the loginc in check_class_loop() so FALSE is actually bad now. not sure why it was good before
+
+
+200709.01
+- tags
+  still missed a couple.. soo damn many of them.. #alwaysknightlysfault
+  redesigned the class tag checks.. might work, might not. /shrug
+  added in a twincast marker for twincast nukes
+  corrected the nosafezone tag
+  deleteing a tag will not readd it instantly as a delete evaluation
+  removed the debug from deletes
+
+  added:
+	/tag buff::assist::your assist
+	/tag heal::assist::your assist
+
+- healing
+  should break sooner when the threshold is reached for the grouphurt count to do a gorup heal
+- bard
+  corrected (read deleted) some old condition calls
+- sql inits
+  reversed the checks from errors 5/6 for fails on a db write to a 0 for a pass
+
+
+200708.01
+- /song list
+  was counting too high. shouldnt error anymore
+- zerkers
+  now have a target for aa battle leap
+- /entropy
+  removed the dpsmeter option
+- tags
+  corrected the function calls to reflect new tag names for every class
+
+
+200706.01
+- lsProtectOutsideGroup - is now the only list for adding Players/NPCs to your XTarget list for healing
+- /line command has been removed
+  it is now part of the / commands that can use lines. for example.
+  /heal line #|#|#|#|#
+- popups (can't believe i'm doing this)
+  there is now a popup for the /env auto command, showing its state
+  when you start using the console in MQ2Next, it will make more sense
+
+** tags and conditions.. you should probably read this. i mean, you dont have to, but it might help
+** I broke all of your tags again.. sorry not sorry?
+- conditions have been removed from Entropy. well, they are still there for reference. but the code no longer uses them
+  so you can still do a /condition and see a list of the conditions you had created, but thats all it will do
+
+- tags have now replaced conditions
+  a tag contains 3 parts: its grouping, its name, and its evaluation
+  example:
+  buff::nocombat::!${Select[${Me.CombatState},combat]} && !${SpawnCount[npc radius ${maEnv.Find[stEnvSafeRadius].Value} playerstate 4]}
+  groupings are limited and cannot be changed. and example of a grouping is buff or heal or nuke
+  the tag name, there are some defaults, and others you can make. you cannot edit the defaults, you can make as many as you like
+  the evalutaion is what you are checking, like "${Me.PctHPs} < 15"
+
+  to create a tag you would do something like:
+  /tag nuke novermin "${Me.House.RacoonBreakingIn} > 11pm"
+  this would creat a tag for nukes that will kill the damn trashpanda that keeps getting in my cat door at nights.
+
+- /tag
+  /tag list - shows all tags/evals for all groupings
+  /tag list heal - shows all tags/evals for the heal group
+	/tag list 2 - shows only the tags/evals you have created
+
+  /tag heal panic delete - will delete the panic evaluation from heals
+  /tag panic delete - will delete the panic tag name.
+
+  tags names have some basic colors to them
+  green - default ones for use
+  brown - markers for things like heal:self or buff:crew
+  cyan - tags i did not include as markers or defualts (basically, yours or errors)
+
+  NOTES:
+  you cannot delete tag name without deleting the evaluation from all the groupings it is in first. if you try, it will yell at you
+  you can have the same tag name in different groups doing different things
+  there is no limit to the number of tags you can make
+  to correct a tag evaluation, simply remake it
+  any invalid tags will show some very irritating red warning notices, often
+  as normal, it is up to you to create the evaluations correctly. ${Tuesday.Tacos} is not a valid eval, even though it should be
+  tags are still applied the same way to things like /buff or /heal example
+  /buff 1 tag tacos add
+
+- curing is back on the plate and a lot more aggressive
+  setting self only cures will no longer trigger crew observers
+- berserker
+  corrected the checks for Drawn to Blood so it can fire again
+- bard
+  added endurance check for AA boastful bellow
+- Engine 3 has been added to all classes
+- /heal point ## will now take a class shortname or a target
+  /heal point 87 PAL - will change paladin heal point to 87
+- pulling
+  added in additional check for hidecorpse on the pull wait loop
+- /invis
+  redesigned it. shouldn't get caught in that stupid loop anymore
+
+
+B200626.01
+- /env moblvlmin and moblvlmax will adjust the ranges now
+- corrected a missed BUID vs NEXT variable in the hud creation
+- sub target() will default to the assists target if none is passed
+- debuffs
+  added in forced gem cooldown waits so it will not skip out of the sub checks too fast
+- cleric
+  some adjustments to complete heal. it is now its own hurt routine
+- rogues
+  several adjustments to summoning poisons
+  set one buff as legs with the following tags: summonpoison, autoinventory, dropinvis, buffself
+  set another buff as the actual poison with tags: buffnow
+
+
+B200621.01
+NOTICE: Make sure you are running the latest MQ2SQLite for this update
+- /heal ch pct control works now
+  it might even heal too!?!?
+- many of the various / commands will validate the name of whatever you are entering
+  if you spell it wrong, or do not have, it will let you know
+- rezing
+  corrected some missed defines
+- enchanter
+  fixed calculated insanity
+- added in code for creating custom defines
+- added lsDropBuffs. any buffs added to this list will be removed from you. includes songs
+
+
+B200613.01
+- rezing
+	corrected an undefined variable for clerics rezing
+- removed the manual BUILD swap flag. code will detect Next vs Live autmagicaly now (thank @knightly)
+- diversion added for looting/cursor handeling when MQ2Autoloot is being used
+- tags
+  healcomplete - complete heals for clerics. yes only clerics.
+- cleric
+  /heal ch pct [##] - Pct health of group main tank to start using complete heal (0=off)
+- shaman
+  /chr surge has been removed
+  /heal surge # - designates the # of hurt people to use a surge. (0=off)
+  stHealSurge - has been moved to the heal map to match other healing
+- pulling
+  rearranged the order of mob tagging: melee, other, range
+- intensity of the resolute AA
+	/chr intensity [raid|group|con]
+	added to all class burns
+- ranger
+  burns shouldnt crash the mac anymore
+- mode harvest
+	due to the redesign of Ground, this will no longer be availble for MQ2Live users
+	for those testing MQ2Next, it will work.
+- /heal /dot /nuke /defense /song /clickitem /burn /miscdps /buff /agro, will now accept on/off as an option.
+
+
+B200609.01
+- buffing
+  missed a couple of the tag name check changes
+  should behave a little better
+
+
+B200608.01
+- corrected a few more NULL outputs
+- corrected a /heal point output error
+- paladin
+  removed the old variables for stance and steel
+  externalized all the AAs in the class code
+- shadowknight
+  removed the old variables for stance and skin
+  removed the old sub for skin
+  externalized all the AAs in the class code
+  added Gift of the Quickspear AA to normal DPS rotation
+- enchanter
+  should use the heal crystals better when /heal self is enabled
+  externalized all the AAs in the class code
+- cleric
+  moved the few remaining AAs to the DB
+- ALL CLASSES
+  moved to set_combat_control for melee combat decisions
+  moved burns before the class misc combat routines
+- summonrange tag shouldnt try to feed your group members arrrows anymore
+- /env buffgem - corrected a sqlite issue. should hold the number now
+- tags
+	complete redesign of the class tag check.... cause the current way wasnt cutting it
+	redoing some tags to better fit their purpose
+	ma -> assist - if the current cycle target is not your assist, will continue on
+	alwaysup -> buffnow - for /buff now, to keep buffs up 24/7
+	crew -> buffcrew - for /buff crew, members of your dannet posse
+	self -> buffself - for /buff self, buffs only for you
+	group -> buffgroup - for /buff group, buffs for people/mercs not part of your dannet gang
+	minion -> buffminion - for /minion buff, buffs meant for your pet
+	powersource -> buffps - for /buff ps (NOT WORKING leave it alone)
+	noactivecombat -> deleted this one, too confusing, fixed other one
+	nocombat - cannot be in an active EQ combat state
+	combat - must be in an active EQ combat state
+- ENGINE3
+  this is being tested on the beastlord
+  the three custom subs will be:
+  e3_pre_BST(bool _debug) - precombat loop
+  e3_combat_BST(bool _debug) - active class combat main loop
+  e3_post_BST(bool _debug) - combat mana/stamina regen
+
+
+B200606.01
+- /area changes will now update across all toons in the same zone
+- corrected the NULL responses from spawncounts while pulling/waiting
+- bards
+  disabled quicktime for now, till the grey key bug is sorted
+- voodoo
+  CANNOTSEE event added to cast failures
+  IMMUNE event aded to successful casts
+- pulling (Nav and tagging)
+  redesign of the tagging system should allow for more error correction
+- /cc stoponds [t|f]
+  melee members with this switch on will not melee a target that has a DS on them
+  this does not apply to toons with Agro enabled
+- /sash
+  corrected the controls for the correct name of the flash bandolier the user has set
+- corrected the e dropdisc tag. it might drop the disc now
+- shaman
+  some reworking to the surge routines. should keep its targets correct now
+- rezing
+  removed the nested if/else functions until the bug is sorted for next
+
+
+B200604.01
+- buff begging
+  had a declare in a bad spot.
+  and i guess i cant spell equal /shrug
+- dannet members added to rez checking
+
+
+B200602.02
+- corrected a mistake i made with the previous heal changes.
+  fuckery happens.
+- /heal group [on|off] - to enable healing your group members
+- /heal groupcount # - number of group hurt 1-6, to use group heals
+- paladin
+  added in the group heal check. no idea where it went
+
+
+B200602.01
+- shield flash
+  adjusted for pally and shadowsnowflake, more checks added for warrior
+- group healing
+  the switch swHealGroup is legacy. knowing when to heal the group is based off of the number
+  of people in your group hurt. unfortunately, i still had the damn switch in the code.
+  so, it is gone. (props to oamuk)
+
+
+B200601.01
+- corrected the output where /heal # see would not show the tag title
+- zone control/DB
+  made some changed to the sql controls
+- pet buffing. uncommented the target stacking check
+- shaman
+  corrected a bad map for group regens
+  added in group healing, for the 5 hour recast group heals they have
+  added in 2 more hurt checks to the heal routine
+- /burn
+  added in debugging
+  force will work on combat dummys for testing
+- cursro
+  corrected a horse/cart issue with trying to mark something not in hand for loot DB
+
+
+B200530.01
+- pulling hard stops
+  /cc pull hardtime - time you want to wait once a hard stop is started by the puller
+  /cc pull hardpct - pct of manna/endurance og your crew you want to stop pulling at (if they get to that %)
+- corrected issue with assists not setting
+
+
+B200529.01
+- loot
+  fixed a PLoot vs SLoot conflict
+- necromancer
+  corrected some serious typos...
+- pet pulling
+  target reset on timer fail for pull
+  should skip mezed mobs now
+- hud
+  fixed the mouseover hud response for errors
+- diverted all SQLite checks on live because .. fucking builder.....
+- /beg
+  buff begging has been slowed down a bit. it will respond to one request and
+  break for a timer reset then go again, if you want it to go faster, shorten the timer
+- pet gear and getting it from your mage
+  should not freez you anymore
+  /minion gear begalias NAME - name is the word to beg for weapons your mage uses as their alias
+
+
+B200527.01
+- loot
+  changed the entire do_loot routine, cross your fingers.
+- pet pulling
+  corrected some logic errors with tgging and distance/los
+  wait time for pet tagging is no based off distance from camp
+  so, the longer the pulls the longer you wait for shitty pet pathing to get to the target
+- mercenary controls are getting closer
+- more database corrections/validations added
+- string outputs
+  are now being externalized into the main database repository (entropy.sqlite)
+	so if you see some funky outputs, lemme know.
+NOTICE!!!
+if you are running next. change the flag at the top of entropy.mac
+#define BUILD 0 to 1
+
+
+B200525.01
+- HUD
+  lots of changes
+  /hud [entropy|dev] working again for next and live
+  added markers for group raid
+  fixed markers for invis and ivu
+  the debug hud shoud not throw undefined variable errors
+- #events
+  CAST_RESET - "Your ability failed. Timer has been reset#*#"
+- shaman
+  added in the check_regen timer creation
+- cleric
+  added debugs to yaulp
+- melee skills
+  fixed a double (&& &&) in a backstabb and frenzy
+- buff group
+  fixed many, many... many issues... it works again
+- database thingies
+  redesign of database updates and error control
+  all errors on database creation or schema updates will
+  now force ending the macro and and spew out lots-o-errors
+
+
+B200522.01
+- warrior
+  adjustment to Brace for Impact for stacking issues
+- /build [save|load]
+  adjustment to relative path locations in preparation for MQ2Next
+
+
+B200519.01
+REPO - many help updates
+- database things
+  i've split the versioning for the schema from the build for the macro
+  this will give more control over the database and a faster start time on macro build changes
+  remember, i dont back your shit up. thats on you
+- buffing
+  shouldnt buff cleric heal wards anymore
+- /buff
+  group - enable/disable group bufffing (not people in your crew aka your bots)
+  raid - enable/disable raid buffing (again, not people in your crew)
+- tags
+  NOCLS - like NOBRD or NODRU will skip casting on that class (i hope)
+  buffraid - use this buff for raid buffing
+  buffgroup - use this buff on groups
+- cleric and shaman
+  added a timer for regen (single and group) checks. default is every 3 seconds
+  the routine check was simply consuming too much of the healers time
+- pulling
+  melee tagging is now a default value for range pulling if a pull brings you to
+  within melee combat range due to a LoS check
+- curing
+  i broke it..again.. will unbreak soon..
+
+
+B200512.01
+- Pulling round 4... will get this some day...
+- pull fetching
+  added breaks for mob death
+  added mob target change if agro while in route
+- /cc pull (considerable changes to the control)
+  /cc pull mode [base|pet|int|nav|multi]
+  /cc pull with [melee|range|other]
+  this will set the mode you tag mobs with while pulling for nav
+  /cc pull with bandolier NAME - bandolier name for ranged mode tagging. (not required)
+  /cc pull with nameother NAME - the name of whatever to pull with for other tagging
+
+
+B200511.02
+- /minion
+  all variables have been removed from the character table and set in the minion table
+  you will need to go through /minion and set it back up
+- zerker
+  stCryHavoc will check for its own buff before casting now
+- necromancer
+  stacking checks for Hand of Death and Funeral Pyre
+- voodoo
+  adjustment to the movement check for non bards
+- pull nav
+  several adjustments to the stop mechanics for non bards (i hate bards)
+- pull tagging
+  Range is no longer required for bow/thrown tagging
+  stRangeOther, if this is set, it will still take priority over bow tagging
+
+
+B200510.03
+- /entropy
+  relaytell - relays a tell to your tie toon and does a broadcast in dannet to all your connected toons
+  *this will not realy tells from pets, the tie toon, yoursellf, or bankers (fuck bankers)
+  *this will not relay a tell to the tie toon if it is not in your dannet
+- pulling
+  nav - considerable changes to the logic. handles instant click items much more gooder
+- cleric
+  fixed spire control
+- /grain
+  25 - relays
+
+
+B200510.02
+- removed a debug echo i left in nuking /sigh
+- /entropy
+  hud time swtich works again
+- /override
+  groupassist - allow overriding yourself as a group assist to still use a manual assist
+  scenario: 2 groups. 1 is a mob control group other is dps. dps group all assist the group ma
+  the group ma sets ma1 to the tank in the control group and enables override groupassist
+  this alows them to be both a group assist and still pull their assist from outside the group
+  keeping all group exp to the dps group and avoiding a raid configuration
+- bard
+  adjustments to pulse line to allow for faster facing and melee
+  added breaks in OOC singing in case combat happens
+- /heal hot corrected so the spell name is no longer there.
+  should be in the /heal list and tagged like other heals
+- corrected a bad variable in /mode hunt
+- corrected an output for /heal xtclass
+- beastlord
+  swapped out Playing Possum AA for Falsified Death
+
+
+B200506.2
+HUDUPDATE
+- hud
+  added invis markers for SoS and IV vs. animal
+  removed the cure marker
+- debug
+  home - all of the home movements
+  sql - for the SQL satabase check/drops
+- auras (this breaks your auras)
+  are now part of buffs like every other buff
+  tag them with buffaura and any other tags you like
+  /buff aura has been altered to on/off switch
+  cleric using Aura of the Reverent can use condition:
+  !${Me.Aura[1].Name.Equal[Reverent Aura]} && !${Me.Aura[2].Name.Equal[Reverent Aura]}
+  due to the DBG fucked up naming convention
+- conditions
+  i've built in the math.calc calculation into the condition check routine
+  you should be able to go back to writing normal conditions an having them function as designed
+  i'll leave it like this till the MQ issue is sorted (if ever...)
+- /pull nav
+  added a death check in the move back portion cause some SKs suck
+- toons will buff you crew members again. the strike is over. agreements have been made
+- /shash flash will work for SKs and warriors now
+- tags
+  buffaura - marker for auras used in the /buffs map
+
+
+B200504.01
+- group regen cycle
+  corrected an AE count condition
+- check_buff_cycle_now aka /buff now
+  redesigned the cycle to exit faster if its not tagged as an alwaysup buff
+- tag
+  activecombat - must be in active eq combat or have KOS mobs within your safeenv radius
+- cleric
+  fixed the celestial regeration aa in group content
+- bard
+  re commented the majority of the mez call routines till i can see why they are screwing up the targeting
+- new command /cure
+  /cure self - cures yourself only
+  /cure group - cures your group members you have control over (including you)
+  /cure crew - cures everyone you have control over
+	/cure item disease NAME
+	/cure item poison NAME
+	/cure item curse NAME
+	/cure item corruption NAME
+	/cure spell disease NAME
+	/cure spell poison NAME
+	/cure spell curse NAME
+	/cure spell corruption NAME
+
+
+B200501.01
+- /heal promise (work in progress)
+- bard
+  should stop singing on a mob death. unless you are in a predective cycle OR have OOC singing on
+- tags
+  all calls to the tag routine should be passing toon names now. hopefully will respond to the class tags better
+  healpromise - promise heal spells
+  healsurge - tag for shaman surge healing spells
+  twincast - nuke tag for twincast trigger spells (only on shaman far, will get it on rest soon)
+- cleric
+  fixed an error with the /heal splash command not responding
+- send_pet (main pet attack routine)
+  update the debugs in it
+  fixed a logic issue with target mismatches
+- /cc agro
+  will now adjust the class aa agro skills, like Bold Attacks, to match
+
+
+B2004029.02
+- /heal weight
+  on/off switch for using weighted HP healing checks
+  OFF by default
+- get_hurt()
+  removed an annoying DEBUG
+
+
+B2004029.01
+- corrected a list line generation for people not using the /line options
+- send_pet()
+  pets will now reset if the pets target does not match the owners target
+- get_hurt() (the health checks for all healing)
+  considerable changes to the weighted healing for group and xtarget
+  hopefully this will evaluate the worst hurt toon better (NEEDS A LOT OF TESTING)
+  corrected a maths error in group hurt calculation
+  corrected a bad variable (one i had moved from chr to heal) for the break to use group heals
+
+
+B2004027.01
+- Sphere of Fire (PoWar Raid) and Steel Mass (quest mob in argath) added to the noTargetNPC list
+- undeleted the code i deleted for unity buffs.. dont ask..
+- pulling
+  USE AT YOUR OWN RISK
+  navpull has been adjusted so if you turn off the following
+  /cc pull sethome
+  /cc home incombat
+  and clear your home marker /home clear
+  nav pull will just wander to every mob and kill it.
+	if you set the same settings for everyone your group and tie to the nav puller its kind of fun to watch
+- nav pull wait time is now based off pull range and mob distance like all the pull modes
+- /entropy buffcooldownwait
+  USE AT YOUR OWN RISK
+  this switch forces a gem cooldown delay in order to force complete buff cycles w/o skiping to the next available buff
+  THIS WILL slow down your toons response time as they will not break buff cycles (by default) on spell cooldowns
+  it is applied to auras, minion, self, crew buffing
+- healing (brace yourself)
+	increased the heal map from 20 to 50
+	the /heal map now covers target of target heals, splash heals (not surge thats later), regen heals (group and single), group heals, pet heals,
+	add the heals just like you would nukes, dots whatever and tag them with the type of heal they are
+	for the existing heals in your /heal list, you need to tag them as well. probably healsingle will cover them
+- tags
+	healsingle - single target heal (self or other)
+	healgroup - group heal
+	healhot - single target heal over time
+	healgrouphot - group heal over time
+	healtot - target of target heal
+	healminion - minion (pet) heal
+	healself - single target heal (self only)
+  healsplash - splash heal (pally/cleric)
+- buffs self/crew
+  corrected an error in the blocked buffs check
+
+
+B2004025.01
+- more hardcoded ranges moved to maHard
+- rez should no longer crash you
+
+
+B2004024.01
+- tag
+  summonaxe - identify zerker axes in the buff lists. should use autoinventory too
+- corrected a zone output display error when the zone name had a comma in it
+- paladin
+  put stCountSplash back in so they can splash again
+- do_mana_recovery() routine will no longer function in designated safe zones.
+- externalixed several distance ranges used throughout the macro
+- rezing
+  adjusted several checks to be a little more aggressive and reset faster when dead
+  shortened all the rez recast times
+  stResurrection is now in play. if you set this variable it will override all other rezing choices
+  so, say you put the clicky 90% rez stick in there. it will use that over your normal rez aa.
+  it will default to normal class AAs if stResurrection is not ready to be used
+  /rez other - sets the thing you want to rez with (not required for rezing classes)
+- pulling
+  dying while in the waiting for mob to get to camp portion of a pull will reset you and the pull
+  dying while moving to get a mob in nav/pet pull will reset you
+- fixed a display error in /cc pull command
+- cleric/shaman group regens redesigned
+  will now check the heal potential of your current song regen vice what you can cast and will use the better
+  if heal potential is == then current will be left alone
+- MA 1/2 can be turned off again, or on.. i dont care.. whatever..
+- beastlord
+  will no longer paragon or consume in a designated safe zone
+
+
+B2004022.02
+- pulling
+  removed nav path checking for base pulling
+  alterd the selection order to fail on mobs faster if they are in any of the zone lists
+- /heal splash now limited to cleric and pally
+- corrected MANY (read a fuck tonne) misspellings of petbuild debug (blame covid-19)
+- pulling (pet)
+  pet local environment range is now hard capped at 200. meaning,
+  any mob over 200 in range, the pet owner will move closer to engage if petpulling
+  you can still set pull ranges well in excess of 200
+  you will get as close as you have set /cc pull navstop
+  LoS is not a requirement
+- beastlord
+  consumption of spirit will now check for a pet
+- variables: stCountDef, stPctDef, lsLineDefense have been moved to the defense db table.
+  make sure to reset them
+- /line
+  defense - now works like the other lines
+- mana recovery
+  added Chandrok's Robe of Darkness from RoF T2 vendor
+  this is the same system that mana rods work off of
+
+
+B2004018.01
+- tag
+  lots of changes to tag mechanics.. should be a little faster
+  dropdisc - will drop the current running disk if any for the one checking
+  dropinvis - will drop invisibilities
+- beastlord
+  corrected missing target on a couple AAs for normal DPS routiones
+  commented out Group Bestial Alignment till i can find out why its hanging the routine
+- debug
+  stop - debugs all set_stop() calls
+  tag - debug markers for all tags
+  harmonious - sk and pally
+  safe - safelist debug
+- warrior
+  corrected a couple targets mission on aa calls. (this was last build)
+- monks (cant believe i'm doing this)
+  /chr fist
+  use - on/off switch
+  bandiloer - name of bandolier used to force aa proc
+  allows a monk to set a bandolier to swap for AA Fist of Steel activation
+  once the AA is proced it will return weapons to what it had before the bandolier swap
+  (this needs testing. i dont play a monk they smell funny)
+- mezing routines
+  redesign of the loop that cycles the map holding mobs and their status
+  changed how area mobs are calculated
+  AE mez and AE stuns will be more aggressively used, to the point of cooldown
+  LOTS of debugging added
+- spell casting
+  more debug to the vooodo cast loop to catch spells breaking early
+  adjusted the delay timers for spells< 1 s vs > 1s. they now share the same mechanics
+- corrected a bad sub call in range tagging (pulling)
+
+
+B2004013.01
+- corrected buff distance checking for AE buffs -@crack
+- tag
+  groupmember - intended target of spell must be one of your group members
+- fixed a typo in the hud time display to ingame
+- removed an errant _divinerezCLR variable for non clerics
+- magicians.... here we go.
+  removed cast_nuke_salvo. just add the spell as a nuke and use a condition like:
+  "${SpawnCount[pet radius ${maEnv.Find[stEnvRadius].Value}]} >= 3"
+  adjusted the healing routine a litte
+	added a slowdown timer to gather. 3s check by default
+  cauldrons will work again
+  removed all the old line crap
+  removed the forceTC. set it as the first spell in your nuke rotation
+  tldr: fat assed mage lost some weight..
+- rest
+  added manna recovery checks for mage
+- /override
+  navcheck - overide valid nav path requirements for all but multipull
+
+
+B2004011.03
+- forgot an "s" in base pull timer
+- its always something...
+
+
+B2004011.02
+- more adjustments to nav pulling
+  cause infinite loops rule!
+
+
+B2004011.01
+- corrected a ] in several rez timer adjustmetns
+- range adjustments to nav pulling
+- pulled out the wait for mob routine from base to apply it to the other pull methods
+
+
+B2004010.02
+- added stTempBuff and lsTempBuffToon to all casting classes
+- check_buff_cycle_temp_list
+  corrected an error with empty values in lists passing fail checks
+- do_raw_edit
+  small adjustment to the final reload to account for timers having a different db structure
+- bard
+  added ooc switch so they can sing their song line out side of combat
+- cleric/shaman
+  pulled out the individual group and single heal over time into one routine
+
+
+B2004010.01
+- /debuff mez resistcount # - [1:10] set the number of retrys on a mez resist (default 3)
+- druid
+  fixed a couple missing .ID's on the changes to wolf
+- cleric
+  corrected a bad map for single heal over time
+- adjusted several timers in rez and CC to the new methods
+  this "should" stop the rez stuck routine
+- removed the old dump variable
+
+B200406.01
+- cleric
+  more work on arbitration (this shit never ends)
+  /chr arb count # - [0-6] number of group hurt to arbitrate
+  /chr arb aa - on/off enable using cleric aa arbitrate
+  /chr arb epic - on/off enable using cleric eipc(s) to arbitrate
+- /cc pull navstop ## - [31-250] set the min distance you will try get to a mob for the
+  various nav pulls before you try to tag and bring back to camp
+- /grab NAME [silent] - silent option added to shut it up
+- TTL
+  corrected a horse/cart issue. it wont add finish times to mobs it hasnt started tracking
+- increased the delay for the drop tag for illusions and mounts.
+- INI obfuscation: lsGrowthToon
+- corrected an errant space in the ini export for conditions
+- /debug combat [status] - combat check status debug
+
+
+B200405.01
+- control_map() fixed maRemoveals (we all know i cant spell)
+- control_routine()
+  adjusted some remove controls for dead or "no longer here" mobs
+- removed some old outer variables: mi, cli
+- zerker
+  target requirement added to binding axe aa
+- pet pulling should try and make sure you have a pet before it pulls
+- warrior
+  added more target loss breaks
+- voodoo()
+  made some changes to the loopcount breaks on events. may need more adjustment
+  added in a auto fail for aas when targets are not matching
+- turned off the debug echo for /heal point
+- get_hurt
+  added in optional reset option. simply returns all values to default and then bails
+- cleric
+  i think i finally fixed arbitration.. some key words in that sentence to take note of
+- pull: base
+  will swap targets if something shows up closer then the actual pull while waiting on incomming
+- all classes
+  added in a lot of the flow debugs. can /echo ${flow} at any time and see what sub you are in
+
+
+B200330.02
+  left a debug in. meh...
+
+
+B200330.01
+- /crew
+  should set group assist correctly now @themanwithnoname
+- added crippling snare to the list of ignored target debuffs for reslowing
+- pulling
+  small adjustments to close ranged mobs
+- shadowknight
+  corrected some bad variables in get_agro (single and AE hate lists)
+
+
+B200329.01
+REPO update
+- cleric
+  /chr beacon [0:6] number of hurt in group to hit aa Beacon of Life
+- shaman
+  adjustments to canni mechanics @themanwithnoname
+- bard
+  fixed a typo in the default pulse line
+- necro
+	corrected a } in Dying Grasp AA
+	adjustments to deathbloom aa so necro wont use at bind or safezone @themanwithnoname
+	ruin all my fun
+	adjustments to the burn routine targeting
+	corrected the timer for cast_blood()
+- /heal rampage
+	adjustments to the command so it will fall in line with on/off/true/false options
+- healing variables and controls
+	ok, new rule of thumb
+	if it is a heal or a control for a heal, and it is not an AA, it is now located under /heal, or will be soon
+	so, things like: grouphot / hot / groupheal / splash
+	the associated counts
+	the on/off switches
+	all under /heal
+	this may require you to reset some spells. so you should check the command
+	if i missed any, let me know (still a couple classes to convert)
+- corrected an ENGINE2 control for /line command help
+- monk
+  gave them intimidation. not sure it was a good idea tho
+- temp buffs
+  fixed them, since i broke them and all
+- /debug
+  blood - necromancer blood nukes
+  blood - necro deathbloom
+
+
+B200326.01
+REPO update
+- stManualAssist1,stManualAssist2 have been removed from the INI export/import
+- mana recovery targeting adjusted
+- druid
+  redesign of the wolf aas to match the fuckery DBG did to them
+- some adjustments to cleric single HoT. if tests good, will do same to shaman
+- bard
+  corrected a target id variable issue for songs
+
+
+B200321.04
+REPO updated
+- shaman
+  corrected (read deleted) some latient heeal varaibles
+- temp buffs
+  made an adjustment to the arg parser
+- removed an old dump reference
+- /sash
+  this is replacing all the bandolier "stuff"
+  sash has the same command structure as heal/nuke/dot/etc
+  /sash use - enables swapping the bandoiler around based off conditions
+  /sash proc use - enables using the sash you have set for a procing weapons
+  /sash proc name - the name of the sash with the proc weapon
+  /sash flash use - enable using the bandolier you have built for flash
+  /sash flash name - name of the bandolier you have set for flash
+  you do not need to include the proc or flash names in the normal sash list, they are special cases
+- shield flash has been moved from PAL,SHD,WAR to /sash
+
+
+B200317.01
+- repo update
+- melee proc bandolier
+  redesigned, wasnt behaving as well as i would have liked
+- corrected a missing bracket in the xtarget build for healers
+- variable name error in /mode lush
+- varriable error in the burn cycle for engine 2
+- looking at some reported issues with pet pulling
+- shadowknight
+  testing a change in the ae hate skills
+  someone let me know if they are getting hit now
+- paladin
+  made same adjustments to ae hate skills
+
+
+B200315.01
+- this is the start of open beta
+  please direct all questions to the general channel in discord
+  if/when you find an issue, the following will be needed
+  make sure you are on the current build
+  class
+  level
+  any screenshots you can provide
+  if they contain character names, you can DM me if you like
+  zone
+  and what you were/are trying to do
+
+- the How To section will continue to grow
+  if you find something you would like there, just say
+
+
+A200314.05
+- bard
+  added a switch for using AA Boastful Bellow
+- /chr line has been removed from bard, wizard and mage
+- /cc poison has been removed. poisons go under buffs
+  rougues still can maintain a count for leg poisons if they like
+- fixed backstab spelling in /cc melee
+- melee proc bandolier will no longer swap if the proc will not stack
+
+
+A200314.04
+- /burn has been ported to engine 2
+  if you set the engine to 2, you can design your own burn routine
+  this is not a requirement, completely optional
+- /line has been expanded to burn
+  /line burn #|#|#|#|# (engine 2 only)
+- burn controls have been moved from character DB to burn
+  you will need to reset your values
+
+
+A200314.01
+- cleric
+  arbitration will now exit heal loop to force recalculations of hurt members.
+- xtarget
+  fixed a missing { for out of group healing population
+	fixed a bad weight calculation in the xtarget healing
+- glyph usage for burns
+  should not try to buy the glyph when you already have it.. "should"
+- /line has been extended to:
+  /line agro #|#|#|#|# (engine 2 only)
+  /line discdps #|#|#|#|# (engine 2 only)
+  /line defense #|#|#|#|#
+
+
+A200313.01
+- HUD
+  made some changes in preperation for MQ2Next parsing and paths
+- /cc mode
+  heal has been limited to clerics, shaman and druids
+  cc has been limited to enchanters and bards. it will be expanded to necros and mages later
+- removed the dannet control switch. it is no longer optional
+
+
+A200311.02
+- REPO update
+- lots of old commeted code/variables removed
+- bard
+  moved the song line from dots to song where it supposed to be
+- /line has been extended to clickitem casts
+  /line item #|#|#|#|#
+
+
+A200310.02
+- commented something out that i shouldnt have.. /shrug
+
+
+A200310.01
+- magician
+  fixed an issue with cauldrons.. people still play mages?
+- events.inc
+  fixed a bad event switch check all over the file (lots of them)
+- /area
+  delete TARGET - will remove the target from all settings for that zone
+  if you do not have a target:
+  area <option> list - will list all the targets that are in that option.
+  e.g. /area exclude list - will list all the mobs set to exclude for that zone
+	if you do have a target:
+  area <option> list - will will let you know if that single target is in that list
+- tag
+  noactivecombat - adjusted to work a "little" better. obeys safe env as well
+- /line command has been extended
+  /line heal #|#|#|#|#
+  /line nuke #|#|#|#|#
+  /line dot #|#|#|#|#
+  /line song #|#|#|#|#
+  will give you the option of changing the order which these routines fire.
+  the # is the number of the loaded skill for that routine. ie /heal 3 would be #3
+  this is not a requirement. lines left empty will default to 1-20 like they do now
+
+
+A200306.01
+- bards (hate bards)
+  /song, like /nuke or /heal or /dot will contain all the songs you want the bard to be singing
+  /line #|#|#|#|#|#|# and so on creates the order that you will sing the songs loaded into /song
+- /debug
+  admin condition - detailed debug on conditions processed
+- /grain
+  24 - edit commands
+- tanks attraction pulling, fixed an issue with the range control
+
+
+A200304.01
+- magician
+  fixed the nuke routine call
+- wizard
+  bad debug variable
+  several other small adjustments
+- shaman
+  several small updates
+- bard
+  (it is being worked on)
+- corrected the named of check_cycle_miscdps() and check_cycle_agro()
+- /home
+  incombat - will set the toon to maintain their camp even in combat
+  i'm expecting this to cause issues with small variances for home camps. it will need testing.
+- /rez
+  pct - min # rez you are willing to take. 0 rezes are auto ignored, 100 are auto taken
+  fixed the targeting failure loop
+- tag
+  delay1s - forces a 1 second delay
+- /build
+  load - will import conditions correctly from saves
+
+
+A200301.01
+- fixed my fix that fixed spire conditions
+- correct the map name for the spam DPS in /build exporting
+- /TTL some more adjustments
+- an absolute shittone of debugging added for macro flow
+- corrected a variable error in the mana gather routine.
+  hopefully it will solve the class hangs
+
+
+A200229.03
+- fixed my addition of conditions to spires. least i think i did.
+
+
+A200229.02
+- /build will export conditions properly now
+- /condition, rebuild of the command. should give better/accurate parsed/visual outputs
+- /miscdps
+  designed as an alernative to the coded misc_combat routines
+  allows you to set up your own spam dps routine and not use whats hardcoded
+  this is a blunt force DPS design, you are required to do all your own conditions if you use this
+  requires engine 2 enabled
+- /chr spire con - # condition number to aply to spires
+
+
+A200228.01
+- cleric
+  removed a missed variable:stHealMode
+- /entropy
+  engine # - [1|2]
+  the engine options will be used to change how code flow is done
+- /agro new control like heal or nuke
+  20 slots to build agro skills with tags and conditions
+  this will override the existing agro routines for PAL|WAR|SHD
+  requires engine 2
+- corrected a bad variable for mq2discord filtering
+- heal points have been moved from the character table to the heal table
+  you will need to reset them, they default to 80
+- many updates to /aux
+
+
+A200226.01
+- corrected a visual output typo for the DoT tag lsit
+- shadowknight
+  corrected a bad target ID in the self healing
+
+
+A200225.01
+- i've moved healing variables out of the character database table and into the heal table
+  you will need to reset your healing as if it was a brand new DB
+- database table environment_buffs has been renamed to environment_buff to keep up the pattern
+- maBuffs map is gone. all buffs fall under maBuff map. again, to keep up the pattern
+- dots
+  corrected a bad variable in the loop cycle
+
+
+A200223.05
+-- WARNING, THIS UPDATE WILL BREAK YOU !
+-- A LOT
+- healing has been completely changed
+  /heal like clickitems now has 20 slots
+  each slot has all the same controls as buff or clickitems
+  /heal list
+  /heal # see - to see that heals details
+  /heal # (on/off switch)
+  /heal # [cursor|gem#] - to add that heal
+  /heal # con # - to add a condition # to that heal
+  /heal # tag NAME - to add a tag to that heal
+  /heal # clear - resets that # to defaults
+  There are no more heal modes. no passive, no aggressive, you design as you see fit.
+  does not impact group heals/group regens or AAs.. yet.
+- nuking has been completely changed
+  /nuke (all the same commands as heal)
+  /nuke delay - delay in 1/10s of a second after a cast before you move on
+  /nuke pctstop - % of targets health to stop nuking
+- defensive cycle has been completely changed
+  /defense (all the same commands as heal)
+- dotting has been completely changed
+  /dot (all the same commands as heal and nuke)
+  /dot refresh - min time left in seconds before you will refresh a dot
+  /dot pctstop - % of targets health to stop dotting
+- HUD
+  removed the heal mode and adjust the remaining healing positions
+- tag
+  targetundead - makes sure the target is undead
+  targethumanoid - makes sure the target is humanoid
+  targetplant - makes sure the target is a plant
+  g# - g(1-13) will force meming of a spell in that specific gem slot
+  noactivecombat - means out of active eq combat
+  noactivedisc - no active discs running in the Combat Abilities window
+- /clickitem
+  rebuilt to match naming conventions of other designs for heal/nuke/dot/defense/so on to keep a standard
+- corrected a self target bug on item clicks
+- buff cycle should return the proper buff gem when done
+- some adjustments to variable resets when you are rezed
+- system added to remove stale data fropm the character database
+- check_minion_cycle_summon() fixed an old function call when no components were on toon
+- xtarget healing will work for PCs out of raid/out of group (lsProtectOutsideGroup)
+
+
+A200217.01
+- cleric
+  externalized the AAs
+  this is a test run to see if its even wortj the effort to do the others
+- /navto "NULL" fixed
+- enabled debuffing for all classes
+- added evac checks to zone variable resetting
+- the various zoing abilities/spells will now clear the home markers
+- pulling
+  commented out a nav.path check for now. should solve the pickup issues when someone else is pulling
+
+
+A200213.01
+- HUD
+  updated to show invis and invis vs undead markers
+- shadowknight
+  fixed an issue with target los on agro routines
+- fireworks
+  corrected a debug value error
+- TTL
+  Time to Live is now working
+  entropy can keep track opf the mobs you kill/how many and the overall average time it takes you to kill them
+  /ttl [logic] (on/off) - enables the tracking logic for kills/averages
+
+  current rules (to skip casting):
+  spell cast time > TTL+50%
+  mobHP < 50%  and spell duration > 1/2 TTL
+  *NOTICE* currently only applied to dots for testing
+
+- bandolier proc
+  the the commands are now /cc proc bandolier NAME, and /cc proc use
+  the code will remember what you had before and switch back to that after the proc lands
+- /debug
+  other event - debugs event results
+- voodoo()
+  some more adjustments to the casting routine for duplication of casts when already casted
+- /entropy
+  castloop - (default 1) controls the number of recast attempts based on some event responses
+
+
+A200208.02
+- /override
+  dscheck - will force ignoring of all damage shield checks on mobs for melee combat
+- monk
+  fixed a stupid FD bug.. though it was rather entertaining
+  several updates to inc to bring current
+
+
+A200208.01
+- targeting system (should read this)
+  i started the targeting system over.. again. the previous one wasnt mutable enough.
+  and it needs to adapt to changing target types and states on the fly.
+  debugging can be done with `/debug combat target` if you think its being stupid.
+  basically now, if an assist is called, it assists, sets and validates the target all in three connecteded steps.
+  set will set and validate target state, or simply check if the target is dead.
+	all classes have been adjusted to the new system.
+- /override
+  envauto - will force the mac start with /env auto on
+- zerker
+  corrected Braxi's Howl. removed the AE requirement
+- voodoo
+  spell casting has been adjusted to watch for events that prevent casting. like duplications of auras
+- /buff
+  now - timer has been corrected. it shouldnt try to cast 100+ times a second
+- /alto
+  in manual mode, this will now clear the curent target
+- check_AA_fade()
+  added additional checks for playerstate 4 mobs and off (0%)
+- /clickitem
+  the off switch will be obeyed now
+
+
+A200204.01
+- REPO Update
+- several changes to spellcasting events. (trying to get it to stop spamming auras and invis.)
+- complete rewrite of the targeting system. this will need some watching and adjusting.
+
+
+A200201.03
+- REPO update
+- cleric
+  more adjustments to arbitration
+  fixed an errant }.. they like to breed..
+- druid
+  corected the heal lists lsHealAdrenaline and lsHealPuravida so they are actually lists now
+- shadowknight
+  lots of little updates to bring current to pally design
+- /buff
+  self & now - will adapt for target spells better
+  now -  will return the target you had before casting targetless spells/items
+- voodoo()
+  aditional placements for targeting adjustments
+- build set (ini) unique entries
+  primary=NAME will swap that item as primary
+  secondary=NAME will swap that item as secondary
+  range=NAME will swap that item as range
+  spellset=NAME will mem that spellset
+- tags
+  corrected several that read pet when they should have been minion
+	epic - used to identify an epic
+	ma - mow matches target against the current assist roll. if they dont match, its refused
+- check_engage()
+  adjustment to radius check for mob counts
+- hooks added to: common.inc, class.clr.inc, class.sk.inc
+- target_reset() replacing
+  set_target, clear_combat, is_target_dead and XTarget1 assist correction subs
+- NOTICE -
+  manual mode forced combat will no longer release corpse targets. so you can attack them now if you like
+- /crew
+  increased some delays to detect when the correct rolls are present
+- macro should end properly now
+- /cc proc
+  support for bandolier swapping for procing weapons
+  use - enable/disable
+  proc - name of bandolier with the proc weapon
+  swap - name of the bandolier to use when proc is not needed
+
+
+A200130.01
+- mode
+  train - trains basic skills (beg, bash, kick, taunt, disarm, sneak)
+  it only trains the skills if you have them
+  stops trying to rain that skill when it is maxed
+  works best on a duel with a pet class, just target the pet and get some sleep
+  harvest - some corrections to movement and grabbing
+- tag
+  combat/nocombat - adjusted to get rid of EQ combat detection. now it works off class combat/nocombat routines
+- /debug
+  buff->blocked - blocked buffs as they are added
+- buffs blicked by higher buffs should be handled a bit better in the cast routine
+- more debugging tools
+
+
+A200128.01
+- tag
+  noagro/agro - varibale checks adjusted. not actual agro, this is checking the /cc agro switch
+- /tc
+  mode stick will function again
+- pull
+  quite a few small adjustments to catch a bug for a pull w/groupassist vs a pull w/o a group assist
+- lots of little adjustments all over to shorten if statements
+- some logic adjustments to curing (not related to tov ice but might help)
+- ranger
+  i'm still fighting with the burn section. but i at least know what the problem is
+- druid
+  got rid of some dublicated aa usage
+- cleric
+  adjustments to arbitration
+
+
+A200119.02
+- repo updated
+- druid
+  corrected the hurt validation checks
+  adjustment to Season's Wrath
+
+
+A200119.01
+- cleric
+  considerable changes to divine arbitration and group healing.
+  forcing a group heal after an arbitrate is no longer a thing.
+  the code re-evaluates group health every arbitrate and will group heal if needed
+  will no longer use turn undead unles dots are enabled
+- custom.inc
+  has been moved to the data folder.
+- /cb has options now [a|s|c|b|t|u]
+  a-aura
+  s-self/shrink/ammo/class-specific
+  c-crew
+  b-check beg queue
+  t-temp
+  u-unity aa buff
+  these options for will force the line of buffs checked even if you have them turned off
+- housekeeping
+  auto removal from the core_communications dannet group
+- buffing
+  class tags should work properly. must be used in conjunction with crew tag!!!
+- /tie
+  corrected spawn targeting for mode stick
+
+
+A200117.01
+- warrior
+  put a check in for Group Bestial Alignment for Battle Leap
+- berserker
+  put a check in for Group Bestial Alignment for Battle Leap
+- shadowknight
+  i put the heal section back in for them. not sure where it went or what it was thinking when it left
+- fixed a debug error
+- HUD
+  updated to display the current set that is running for the character
+- sets
+	/env set NAME - will load and store the current set in the database for use later if needed.
+  /entropy rememberset - (on/off) will force a reload of the set at the start of the mac
+- /mode
+  "lush" will drink whatever you have set as /mode data "drink name" till you are shit faced
+  it will keep you that way until the bar tender you are hitting on kicks your ass out for the night
+  or you are max alcohol tolerance
+- corrected a bad check for item dps clicking
+
+
+A200112.01
+- /crew
+  fixed a possible infinite loop. is there any other kind?
+  crews should not try to invite their friends either
+- mission farming
+  ## WARNING - this is still in testing, and not completely.. completed..
+  /mode farm MISSIONNAME
+  can get a list of existing missions with `/aux farm`
+  these will be a case by case design
+- /build
+  set - smaller version of a load. works off sets.ini in the data directory structured like the following:
+  [clericraid]
+  ; settings for a handsoff heal only cleric
+  stCountArbitrate=0
+  stCountSplash=1
+  swBuffSelf=FALSE
+  swBuffAmmo=FALSE
+  swBuffBeg=FALSE
+  swBuffCrew=FALSE
+  swRezGive=FALSE
+  swRezCombat=FALSE
+  swHealXTarget=TRUE
+	e.g. doing a /build set clericraid
+	will load those settings directly. nothing else. can make as many sets as you like.
+	DO NOT use for lists. least not yet.
+	the point of this is speed and something simpler to use
+	setting this up is completely manual
+- pulling
+  more refinements to nav pulling. still not happy with the delays in pulling with spells
+  will see about pulling the cast range out and using that as a max moveto for the target
+  nav - should skip excludes(or type) mobs better
+- debugs
+  more updates to te debugs for pulling
+  "cb" will debug the /cb command
+- CHANGES TO CONDITIONS!!!!
+  conditions are no longer attached as a +c# (+c4 or whatever) to the thing you are wanting to check.
+  they are now their own entry e.g. stBuff5Con=#, # being the number of the condition you want to use
+  application is the same, if the condition evaluates to FALSE then the whatever will not be done.
+  setting a condition to 0 will disable the condition check. 0 is the default.
+- /condition (new command)
+  /condition 4 "!${Select[${Me.Class.ShortName},DRU]}" would add that condition to slot 4
+  /condition 8 clear - would set the condition back to false/default
+  /condition list - will show all set conditions
+- buffing
+  self buffs should obey the off switch again. i'll try to not beak it anymore
+- /buff
+  the /buff command will now accept editing for buffs for example:
+  /buff 1 gem13 - will set buff 1 to the spell in gem 13
+  /buff 1 - will turn buff 1 on or off
+  /buff 5 con 19 - will set buff 5 to condition 19. whatever you have there
+  /buff 46 alias soe - will set the alias of buff 46 to soe
+  /buff list - will list all the buffs being used and their on/off status
+  /buff 12 see - will show you everthing you have set for buff 12
+  /buff 1 cursor - will set the buff name to whatever is on your cursor
+  /buff 10 tag "crew|self" add - will add those two tags to your tag list for buff 10
+  /buff 14 tag clear - will clear all tags for buff 14
+  /buff 28 clear - will rest it to all defaults and turn off
+- dps click items
+  /clickitem (new command, i'll change the name when i can use /item 'til then, suck it up)
+  now have an on off switch like buffs do
+  now attach conditions the same way buffs do
+  already did tags the samee as everything else
+  has all the same edit options as /buff
+
+
+A200103.03
+- missed a debug
+
+
+A200103.02
+- rogue
+  sos switch should not show up under /chr only /env
+  and... complete overhall
+- enchanter
+  bastards should autoinventory the damn crystals better
+- beastlord
+  redesign consume/focused/group paragon routine. should check gorup a little better
+- timer
+  reduced the default time for tiCheck_Behind from 10 to 5 seconds. undate your DB if you like
+- check_cursor() - i've removed the while loop. i dont like crashes
+  now its a 1 shot deal with timer adjustments to do again if needed
+  also... if something shows up on your cursor thats lore,
+  and you have it set to leave, it will now be automagically changed to ignore.
+- /mode
+  hunt - added in some checks so it will read commands while in the mode
+  forage - some corrections to account for the new cursor item handeling
+- several changes to the housekeeping routine
+- pulling
+  split the tagging from the prep routine, removed the delays
+  items/aas/discs/spells will now work. if you set something beyond their range, it's your problem
+- voodoo
+  added in an option for exceeding cast ranges based on /env rad
+- tags
+  "target" requires whatever is being use has a target. you dot havd a target, it will fail
+- tank attraction skills have been removed from the main tag routine and placed
+  into the waiting routine to use if the mob doesnt want to get all the way to the puller
+- valid target adjustments for more body/animation types
+- stick_to_target() - rewrite. this is the stick to a mob/stick behind control
+- HUD
+  added the target max meleerange*.9 next to target distance
+- out of group people should assist the MA toon now. i think
+
+
+
+A191227.01
+- fixed some errors in mob acquisition code created from adding the debugs
+- shadowknight
+  several adjustments
+
+
+A191225.02
+-tags
+  "aliasonly" will restrict a buff to /beg only. this overrides all other tags
+- /cure
+  lot of changes. should be more reliable. did i mention a lot of changes
+  **WARNING** cures do not cure song debuffs. working on getting MQ to see them
+- /see
+  added in some  more input validation
+- /take
+  will now accept the current highlighted task in a task window
+
+
+A191225.01
+- necromancer
+  several corrections to functionality. like it wasn't functioning. meh..
+- enchanter
+  fixed a bug where chanter would not respond to / commands while in a mez loop
+- ranger
+  fixed a rather glaring issue with the melee burn disc not generating in the DB
+  added in stHealFont - this is the purefont heal line of ranger spells
+- /mode
+  /mode [summon] - updated for the new soulstone
+  /mode [stop] - stops ALL modes
+- /debug
+  /debug [stop] - stops ALL debugs
+  complete redesign. i over ran the 2048 limit
+  added hundreds of debug entries throughout the code
+- /heal
+  fixed heal switches not showing, or just showing off
+  /heal [tot] - enables _hybrids_ (BST,RNG,PAL) to use heal targets target spells (healpoint based)
+- healing
+  moving heal lists (what class has access to what types of heals) to a sub vice each character file
+- buffs
+  changed buffs so they will read triggers and swap to the trigger for data validation
+  e.g. bard selo's sonata if you have the AA high enough, it will read Selo's Accelerato data
+- observers will now skip spawns that are not in zone
+- tags
+  "epic" is now a valid tag for the item cast routine. it holds a specific place in the combat routine
+  "noagro" to use when you are not using agro skills
+- startup option "forceauto" will start the mac in auto
+  e.g. /mac exspes\entropy forceauto
+- fade, made some adjustments. lets see how it goes
+
+
+A191222.01
+- /cc force will now ignore toons /env rad ##
+- do_loot() - small change to item not found when trying to figure out the inventory
+- /cc melee will now show when a skill is set to /autoskill
+- pulling
+  more adjustments to the space between melee and range minimum.. getting closer..
+- paladin, beastlord
+  redesign of taret id passing for subs: burn, misc_combat
+  will migrate same changed to other classes slowly
+- get_target_buff_time_left()
+  fixed (i think) the cast hang when checking buffs while a mob dies
+- events for Icebount AoW mission in TOV
+- working on one for the flying unicorn fucker..
+
+
+A191219.03
+- fixed the glyph spam.. /sigh
+
+
+A191219.02
+- fixed the spire spam
+
+
+A191219.01
+- magician
+  added debugs for mana gather and coh
+  /coh added to the root help
+  isolated the check_gather() sub
+- cleric
+  updated some dannet outer variables for single heal over time spells
+- enchanter
+  isolated the check_gather() sub
+	put the crystal checks on a 10s timer
+- fixed bash not bashing, not sure what it was thinking
+- some adjustments to the /take command
+- pulling
+  corrected some timers in the pulling routines?!?
+  made some adjustmments to the evil 31 pace range issue
+- cast_temp_pet()
+  should no longer try to cast while you have one summoned for clerics and wizards
+- housekeeping
+  fixed the timer failing to start
+- debugs added
+  glyph
+  spire
+  chanter: crystal, gather
+  magician: coh, gather
+
+
+A191216.01
+- monk
+  more fd check
+- berserker
+  adjustments to burns
+- cleric
+  small typo on the help. we all know i can't spell
+  fixed a listiterator in the primary weapon summoning
+- mob finding for pulling
+  MQ2nav is now a requirement for pulling!
+  this impacts all things that find a mob to pull. all pull modes, hunter, so on.
+  step calculation has been changed to your pull env/5.
+  mob acceptance is now based off shortest nav path not shortest mob distance.
+  meaning it will go for the closest nav'able mob as to not agro other mobs in a longer path that may be closer.
+
+
+A191214.01
+- bard
+  added Reflexive Retort and Relfexive Rejoinder to main combat routine
+- shadowknight
+  several typos corrected
+  removed the HP check for the Gouging Blade line
+- /mode fish is working. will use a Fishermans Companion unless you manually equip another pole
+- cursor/loot several refinements
+- /crew #
+  crews work from 1-12
+  lsCrew# contains the list of your crew members
+  each crew will contain a dannet group for control of broadcasted commands\
+- /here now defaults to your current crew (no crew=all). /here all broadcasts to everyone
+- /enter now defaults to your current crew (no crew=all). /enter all broadcasts to everyone
+- /on now defaults to your current crew (no crew=all). /on all broadcasts to everyone
+- /off now defaults to your current crew (no crew=all). /off all broadcasts to everyone
+- /invis now defaults to your current crew (no crew=all). /invis all broadcasts to everyone
+- /take now defaults to your current crew (no crew=all). /take all broadcasts to everyone
+- /home gather now defaults to your current crew (no crew=all). /home gather all broadcasts to everyone
+
+
+A191211.01
+- adjustments to /here
+- debugs added
+  tie - all tie related.. stuff
+- lots of help updates
+- fixed my stupid keyboard changing the case on letters..
+- /mode - redesign of /mode collect and harvest
+  collect is no more. deleted. gone buhby..
+  data - sets the data you are interested in for the mode. setting data as "*Blue Mushroom" would
+         let harvest pick up all the blue mushrooms on the map
+         you can also use this for hunting specific mob names
+  harvest - puks up the groundspawns set in data
+  scorch - deleted
+  hunt - kills everything. if you put a mob in data, it will only go after that mob. can use more then one mob name
+- added a line for hiatus discs to accomodate the ToV expanion. stHiatus
+- corretion to observations typo
+
+
+A191208.01
+- developed a new method for outputs for / commands. faster and faster!!
+- finished /grain control for outputs
+- more refining to the pull code
+- necromancer
+  should be fully functional. needs testing.
+
+
+
+A191207.01
+- added in more melee checks for facing a target to all class files
+- more adjustments to the pulling tag routine
+- /home
+  onauto - (switch) will set a home camp whenever auto is enabled
+- /pull
+  nav - uses nav to find a valid mob, goes and gets it and brings it back to the group for spanking
+  int - uses a cleric or shaman to heal you with an interventions heal that nukes tour target and agros it back to the group.
+- /debug
+  face - facing movements
+  def - class defensive cycle routines
+
+
+
+A191206.01
+- fix to pets not paying attention to what they are supposed to be doing
+- pull modes that are now functional
+  pet - if you turn this on and you are not a pet class, you are once again stupid.
+    - sends your pet out to piss off a mob and bring it back to camp.
+  base - completely stationary pulling
+    - range tag mobs to get them to you
+    - los required
+    - and a freaking range method for pulling
+- externalized the timer used for pulling LoS issues. Check_LoS_Timeout default is 10 seconds if you want to change it
+- voodoo
+  adjustment to the alt ability cast routine to skip all delays for instant cast.
+
+
+
+A191204.01
+ok, time to start this
+- /cursor
+  /cursor [see|keep|destroy|leave|ignore] "nameofitem" will set that item to that option in the database
+  /cursor [see|keep|destroy|leave|ignore] with an item on the cursor will set that item to that option in the database
+- /mode
+  forage - forages shit. matches to lood databse and treats as set
+  summon - will (while in lobby) go buy the summon item you need, take it to the summoner and summon your corpse. mode ends then
+  drag - drags corpses. all the corpses.. seriously. all of them
+  collect - goes and gets shineys. effectiveness is very reliant on your zone mesh
+  scorch - NOT FOR USE IN NON NOOB ZONE!!
+    - kills everything
+    - obeys exclude list
+    - reqires /env auto enabled
+    - best to use with a high pull radius
+    - follows /cc mode Range|Melee usage
+  petfarm - NOT FOR USE IN NON NOOB ZONE!!
+    - sends pet to kill shit
+    - if you increase your /cc pull rad ## over your pet range, you are stupid
+    - obeys exclude list
+- /build
+  /build save "name" [all] - will save all DB fields for your character false or otherwise. good for making fast switching builds if you need. will still not save fields for character names
+- several small class corrections
+
+
+
+
